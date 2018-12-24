@@ -1,0 +1,45 @@
+{
+  "name": "flex",
+  "version": "1.0.0",
+  "description": "An intelligent candidate-job posting tool",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nramabad/Flex.git"
+  },
+  "keywords": [
+    "MongoDB",
+    "Express",
+    "React",
+    "Node",
+    "Job",
+    "Resume",
+    "Candidate",
+    "Hiring",
+    "Sentiment",
+    "Keyword"
+  ],
+  "author": "Navaneet Ramabadran, Christina Chu, George Wang, Adi Kantawala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nramabad/Flex/issues"
+  },
+  "homepage": "https://github.com/nramabad/Flex#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
