@@ -50,8 +50,6 @@ class NavBar extends React.Component {
     }
 }
 
-export default NavBar;
-
 const mapStateToProps = state => ({
     loggedIn: state.session.isAuthenticated
 });
