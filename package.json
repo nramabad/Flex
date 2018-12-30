@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+    "frontend-install": "npm install --prefix frontend",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
@@ -30,10 +33,13 @@
   },
   "homepage": "https://github.com/nramabad/Flex#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
+    "jwt-decode": "^2.2.0",
     "mongoose": "^5.4.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
