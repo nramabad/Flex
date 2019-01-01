@@ -48,7 +48,7 @@ This problem decomposes into several areas of activity:
 
 
 ## Accomplished over the Weekend
- - Researched and identified our key API's that will be used for keyword keyword matching and sentiment analysis
+ - Researched and identified our key API's that will be used for job postings, keyword matching, and sentiment analysis 
  
 ## Group Members & Work Breakdown
 
