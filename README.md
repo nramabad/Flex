@@ -58,11 +58,11 @@ This problem decomposes into several areas of activity:
 
 
 ### Day 1 Wed 1/2
-  - [ ] mLab setup **Christina** 
-  - [ ] User Auth **Nav**
+  - [X] mLab setup **Christina** 
+  - [X] User Auth **Nav**
   - [ ] Research APIs **George**  
   - [ ] Frontend routes and components **Christina** 
-  - [ ] Wireframe and design for website **Everyone** 
+  - [X] Wireframe and design for website **Everyone** 
   - [ ] Backend -- Resumes, Job Listing -- models, validations **Adi** 
 
 ### Day 2 Thu ⅓
