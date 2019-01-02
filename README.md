@@ -42,7 +42,6 @@ This problem decomposes into several areas of activity:
 	Word map
 	Keyword match count
 	Spell checker on your resume
-	Dunno dude
 
   + ##### Backend
 
