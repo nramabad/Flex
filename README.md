@@ -58,33 +58,33 @@ This problem decomposes into several areas of activity:
 
 
 ### Day 1 Wed 1/2
-  * mLab setup **CHRISTINA** 
-  * User Auth **NAV**
-  * Research APIs ** GEORGE**  
-  * Frontend routes and components **CHRISTINA** 
-  * Wireframe and design for website **GROUP** 
-  * Backend -- Resumes, Job Listing -- models, validations **ADI** 
+  - [ ] mLab setup **Christina** 
+  - [ ] User Auth **Nav**
+  - [ ] Research APIs **George**  
+  - [ ] Frontend routes and components **Christina** 
+  - [ ] Wireframe and design for website **Everyone** 
+  - [ ] Backend -- Resumes, Job Listing -- models, validations **Adi** 
 
 ### Day 2 Thu ⅓
-  * Basic frontend with buttons and space to paste resume, skeleton for results **Adi**  
-  * After User Auth frontend/backend: Get heroku set up **Christina**
-  * Test API (GitHub) calls with backend **George** 
+  - [ ] Basic frontend with buttons and space to paste resume, skeleton for results **Adi**  
+  - [ ] After User Auth frontend/backend: Get heroku set up **Christina**
+  - [ ] Test API (GitHub) calls with backend **George** 
 
 ### Day 3 Fri 1/4
-  * Exploring the model and npm packages **Nav** 
-  * User resume frontend component **Adi** 
-  * Job listings frontend component **Christina** 
-  * Backend queries to render for frontend components **George** 
+  - [ ] Exploring the model and npm packages **Nav** 
+  - [ ] User resume frontend component **Adi** 
+  - [ ] Job listings frontend component **Christina** 
+  - [ ] Backend queries to render for frontend components **George** 
 
 ### Day 4 and 5 
-  * Catch up on incomplete tasks from Days 1-3
+  - [ ] Catch up on incomplete tasks from Days 1-3 **Everyone**
 
 ### Day 6 Mon 1/7
-  * Frontend components **Nav and Adi**
-  * CSS **George and Christina** 
+  - [ ] Frontend components **Nav & Adi**
+  - [ ] CSS **George & Christina** 
 
 ### Day 7 Tues 1/8 
-  * Add readme **Adi**
-  * improve UX **Christina and George**
-  * Fix bugs **Everyone**
+  - [ ] Add readme **Adi**
+  - [ ] improve UX **Christina & George**
+  - [ ] Fix bugs **Everyone**
 
