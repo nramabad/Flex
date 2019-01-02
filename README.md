@@ -59,10 +59,15 @@ This problem decomposes into several areas of activity:
 
 ### Day 1 Wed 1/2
 mLab setup **CHRISTINA** 
+
 User Auth **NAV**
-Research APIs ** GEORGE** 
+
+Research APIs **GEORGE** 
+
 Frontend routes and components 
+
 Wireframe and design for website **CHRISTINA** 
+
 Backend -- Resumes, Job Listing -- models, validations **ADI** 
 
 ### Day 2 Thu 1/3
