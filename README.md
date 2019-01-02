@@ -13,7 +13,7 @@ This problem decomposes into several areas of activity:
 
 ## Functionality & MVP
 
-   - [ ] User Auth
+   - [x] User Auth
    - [ ] Users can paste in their resume in raw text format  
    - [ ] Compare resume and job listing and return matches using an API 
    - [ ] Extract keyword with NLI for boolean query of resume/job listing
