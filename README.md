@@ -57,35 +57,35 @@ This problem decomposes into several areas of activity:
 **Adi Kantawala**,
 **Navaneet Ramabadran**
 
+
 ### Day 1 Wed 1/2
-mLab setup **CHRISTINA** 
+  * mLab setup **CHRISTINA** 
+  * User Auth **NAV**
+  * Research APIs ** GEORGE**  
+  * Frontend routes and components **CHRISTINA** 
+  * Wireframe and design for website **GROUP** 
+  * Backend -- Resumes, Job Listing -- models, validations **ADI** 
 
-User Auth **NAV**
-
-Research APIs **GEORGE** 
-
-Frontend routes and components 
-
-Wireframe and design for website **CHRISTINA** 
-
-Backend -- Resumes, Job Listing -- models, validations **ADI** 
-
-### Day 2 Thu 1/3
-Basic frontend with buttons and space to paste resume, skeleton for results **TBD**  
-After User Auth frontend/backend: Get heroku set up **TBD**
-Test API (GitHub, Cloudmersive) calls with backend **TBD** 
+### Day 2 Thu ⅓
+  * Basic frontend with buttons and space to paste resume, skeleton for results **Adi**  
+  * After User Auth frontend/backend: Get heroku set up **Christina**
+  * Test API (GitHub) calls with backend **George** 
 
 ### Day 3 Fri 1/4
-  - messing with the model or exploring the model
-  - Frontend routes and components 
+  * Exploring the model and npm packages **Nav** 
+  * User resume frontend component **Adi** 
+  * Job listings frontend component **Christina** 
+  * Backend queries to render for frontend components **George** 
 
 ### Day 4 and 5 
-Catch up on incomplete tasks from Days 1-3
+  * Catch up on incomplete tasks from Days 1-3
 
 ### Day 6 Mon 1/7
-Frontend components and CSS 
+  * Frontend components **Nav and Adi**
+  * CSS **George and Christina** 
 
 ### Day 7 Tues 1/8 
-About the project copy
-improve UX
+  * Add readme **Adi**
+  * improve UX **Christina and George**
+  * Fix bugs **Everyone**
 
