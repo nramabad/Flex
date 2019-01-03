@@ -72,7 +72,7 @@ class SignupForm extends React.Component {
                 <input type="password" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
                 <br />
                 <input type="password" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
-                <br />
+                <br /><br></br>
                 <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Enter your resume..."></textarea>
                 <br />
                 <input type="submit" value="Submit" />
