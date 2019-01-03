@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import { fetchJobs, fetchJob } from "./actions/job_actions";
+
 // import App from "./App";
 // import * as serviceWorker from "./serviceWorker";
 // // We will create this component shortly
@@ -52,6 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.fetchJobs = fetchJobs;
+    window.fetchJob = fetchJob;
 
   ReactDOM.render(<Root store={store} />, root);
 });
