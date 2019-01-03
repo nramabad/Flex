@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./stylesheets/normalize.css";
+import "./stylesheets/index.css";
+import "./stylesheets/splash.css";
 // import App from "./App";
 // import * as serviceWorker from "./serviceWorker";
 // // We will create this component shortly
