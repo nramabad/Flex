@@ -27,7 +27,7 @@ require('./config/passport')(passport);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+// debugger
 app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;

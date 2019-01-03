@@ -45,11 +45,12 @@ router.post("/register", (req, res) => {
         email: req.body.email,
         password: req.body.password
       });
-
+      debugger
       const newResume = new Resume({
-        user: req.user.id,
+        user: newUser.id,
         text: req.body.resume
       })
+      newResume.save();
 
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {

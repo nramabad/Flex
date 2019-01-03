@@ -1,6 +1,6 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
-const validResume = require('./resume');
+const validResumeInput = require('./resume');
 
 module.exports = function validateRegisterInput(data) {
     let errors = {};
@@ -9,7 +9,7 @@ module.exports = function validateRegisterInput(data) {
     data.email = validText(data.email) ? data.email : '';
     data.password = validText(data.password) ? data.password : '';
     data.password2 = validText(data.password2) ? data.password2 : '';
-    data.resume = validText(data.resume) && validResume(data.resume) ? data.resume : '';
+    data.resume = validText(data.resume) && validResumeInput(data.resume) ? data.resume : '';
 
     if (!Validator.isLength(data.username, { min: 2, max: 30 })) {
         errors.username = 'Username must be between 2 and 30 characters';
