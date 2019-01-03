@@ -8,8 +8,8 @@ module.exports = function validateTweetInput(data) {
 
     data.text = validText(data.text) ? data.text : '';
 
-    if (!Validator.isLength(data.text, { min: 5, max: 38380 })) {
-        errors.text = 'Tweet must be between 5 and 140 characters';
+    if (!Validator.isLength(data.text, { min: 50, max: 38380 })) {
+        errors.text = 'Resume/CV must be between 50 and 38380 characters';
     }
 
     if (Validator.isEmpty(data.text)) {
