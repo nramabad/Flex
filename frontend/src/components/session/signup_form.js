@@ -11,6 +11,7 @@ class SignupForm extends React.Component {
             username: '',
             password: '',
             password2: '',
+            resume: '',
             errors: {}
         };
 
@@ -22,7 +23,7 @@ class SignupForm extends React.Component {
         if (nextProps.signedIn === true) {
             this.props.history.push('/login');
         }
-
+        // try editing the above later
         this.setState({ errors: nextProps.errors })
     }
 
@@ -38,7 +39,8 @@ class SignupForm extends React.Component {
             email: this.state.email,
             username: this.state.username,
             password: this.state.password,
-            password2: this.state.password2
+            password2: this.state.password2,
+            resume: this.state.resume
         };
 
         this.props.signup(user, this.props.history);
@@ -57,41 +59,26 @@ class SignupForm extends React.Component {
     }
 
     render() {
-        return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    <div className="login-form">
-                        <br />
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                        />
-                        <br />
-                        <input type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                            placeholder="Username"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password2}
-                            onChange={this.update('password2')}
-                            placeholder="Confirm Password"
-                        />
-                        <br />
-                        <input type="submit" value="Submit" />
-                        {this.renderErrors()}
-                    </div>
-                </form>
-            </div>
-        );
+        console.log(this.state)
+        return <div className="login-form-container">
+            <form onSubmit={this.handleSubmit}>
+              <div className="login-form">
+                <br />
+                <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
+                <br />
+                <input type="text" value={this.state.username} onChange={this.update("username")} placeholder="Username" />
+                <br />
+                <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password" />
+                <br />
+                <input type="password" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
+                <br /><br></br>
+                <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Enter your resume..."></textarea>
+                <br />
+                <input type="submit" value="Submit" />
+                {this.renderErrors()}
+              </div>
+            </form>
+          </div>;
     }
 }
 
