@@ -12,11 +12,13 @@ class SignupForm extends React.Component {
             password: '',
             password2: '',
             resume: '',
+            firstPage: true,
             errors: {}
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
+        this.changePage = this.changePage.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -30,6 +32,13 @@ class SignupForm extends React.Component {
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
+        });
+    }
+
+    changePage(e) {
+        e.preventDefault();
+        this.setState({
+            firstPage: false
         });
     }
 
@@ -59,23 +68,33 @@ class SignupForm extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        // debugger
+        let page = this.state.firstPage ? (
+                    <div>
+                        <br />
+                        <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
+                        <br />
+                        <input type="text" value={this.state.username} onChange={this.update("username")} placeholder="Username" />
+                        <br />
+                        <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password" />
+                        <br />
+                        <input type="password" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
+                        <br />
+                        <button onClick={this.changePage}>Next Page</button>
+                    </div>
+                                        ) : (
+                    <div>
+                        <br />
+                        <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Enter your resume..." />
+                        <br />
+                        <input type="submit" value="Submit" />
+                        {this.renderErrors()}
+                    </div>
+                                        );
         return <div className="login-form-container">
             <form onSubmit={this.handleSubmit}>
               <div className="login-form">
-                <br />
-                <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
-                <br />
-                <input type="text" value={this.state.username} onChange={this.update("username")} placeholder="Username" />
-                <br />
-                <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password" />
-                <br />
-                <input type="password" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
-                <br /><br></br>
-                <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Enter your resume..."></textarea>
-                <br />
-                <input type="submit" value="Submit" />
-                {this.renderErrors()}
+                {page}
               </div>
             </form>
           </div>;
