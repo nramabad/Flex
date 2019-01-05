@@ -32,12 +32,12 @@ router.post("/register", (req, res) => {
   }
 
   // Check to make sure nobody has already registered with a duplicate email
-  User.findOne({ email: req.body.email }).then(user => {
+  User.findOne({ $or: [{ email: req.body.email }, { username: req.body.username }] }).then(user => {
     if (user) {
       // Throw a 400 error if the email address already exists
       return res
         .status(400)
-        .json({ email: "A user has already registered with this address" });
+        .json({ email: "A user has already registered with this username or email address" });
     } else {
       // Otherwise create a new user
       const newUser = new User({
@@ -45,12 +45,12 @@ router.post("/register", (req, res) => {
         email: req.body.email,
         password: req.body.password
       });
-      debugger
+      // debugger
       const newResume = new Resume({
         user: newUser.id,
         text: req.body.resume
       })
-      newResume.save();
+      newResume.save(); // add some error catching
 
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -63,6 +63,24 @@ router.post("/register", (req, res) => {
         });
       });
     }
+  });
+});
+
+router.post("/mock-register", (req, res) => {
+  const { errors, isValid } = validateRegisterInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
+  // Check to make sure nobody has already registered with a duplicate email
+  User.findOne({ $or: [{ email: req.body.email }, { username: req.body.username }] }).then(user => {
+    if (user) {
+      // Throw a 400 error if the email address already exists
+      return res
+        .status(400)
+        .json({ email: "A user has already registered with this username or email address" });
+    } 
   });
 });
 

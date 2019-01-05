@@ -14,6 +14,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const users = require("./routes/api/users");
+const jobs = require("./routes/api/jobs");
 
 mongoose
     .connect(db, { useNewUrlParser: true })
@@ -29,6 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // debugger
 app.use("/api/users", users);
+app.use("/api/jobs", jobs);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
