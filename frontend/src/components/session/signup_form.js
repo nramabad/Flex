@@ -106,7 +106,7 @@ class SignupForm extends React.Component {
                         <br />
                         <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Enter your resume..." required/>
                         <br />
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Sign Up" />
                         {this.renderErrors()}
                     </div>
                                         );
