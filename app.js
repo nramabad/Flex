@@ -28,7 +28,7 @@ require('./config/passport')(passport);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+// debugger
 app.use("/api/users", users);
 app.use("/api/jobs", jobs);
 

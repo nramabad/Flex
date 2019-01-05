@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const User = require("../../models/User");
+const Resume = require("../../models/Resume")
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const passport = require("passport");
@@ -44,6 +45,12 @@ router.post("/register", (req, res) => {
         email: req.body.email,
         password: req.body.password
       });
+      // debugger
+      const newResume = new Resume({
+        user: newUser.id,
+        text: req.body.resume
+      })
+      newResume.save(); // add some error catching
 
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {

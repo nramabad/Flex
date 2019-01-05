@@ -1,3 +1,7 @@
+html {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,9 +10,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+html {
+  background: #151b26
+}
+
+/* 
+almost-black: #151b26
+green: #6BBAA7
+yellow: #FBA100
+purple/gray: #6C6488
+lighter gray: BlA19E
+*/

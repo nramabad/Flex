@@ -13,8 +13,8 @@ This problem decomposes into several areas of activity:
 
 ## Functionality & MVP
 
-   - [x] User Auth
-   - [ ] Users can paste in their resume in raw text format  
+   - [X] User Auth
+   - [X] Users can paste in their resume in raw text format  
    - [ ] Compare resume and job listing and return matches using an API 
    - [ ] Extract keyword with NLI for boolean query of resume/job listing
 
@@ -60,15 +60,15 @@ This problem decomposes into several areas of activity:
 ### Day 1 Wed 1/2
   - [X] mLab setup **Christina** 
   - [X] User Auth **Nav**
-  - [ ] Research APIs **George**  
+  - [X] Research APIs **George**  
   - [ ] Frontend routes and components **Christina** 
   - [X] Wireframe and design for website **Everyone** 
-  - [ ] Backend -- Resumes, Job Listing -- models, validations **Adi** 
+  - [ ] Backend -- Resumes, Job Listing -- models, validations **George & Adi** 
 
 ### Day 2 Thu ⅓
-  - [ ] Basic frontend with buttons and space to paste resume, skeleton for results **Adi**  
+  - [X] Basic frontend with buttons and space to paste resume, skeleton for results **Nav**  
   - [ ] After User Auth frontend/backend: Get heroku set up **Christina**
-  - [ ] Test API (GitHub) calls with backend **George** 
+  - [ ] Test API (GitHub) calls with backend **George & Adi** 
 
 ### Day 3 Fri 1/4
   - [ ] Exploring the model and npm packages **Nav** 
