@@ -18,7 +18,8 @@ class SignupForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
-        this.changePage = this.changePage.bind(this);
+        this.toPageOne = this.toPageOne.bind(this);
+        this.toPageTwo = this.toPageTwo.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -35,11 +36,24 @@ class SignupForm extends React.Component {
         });
     }
 
-    changePage(e) {
+    toPageOne(e) {
         e.preventDefault();
-        this.setState({
-            firstPage: false
-        });
+        this.setState({ firstPage: true });
+    }
+
+    toPageTwo(e) {
+        e.preventDefault();
+        let user = { 
+            email: this.state.email, 
+            username: this.state.username, 
+            password: this.state.password, 
+            password2: this.state.password2, 
+            resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non erat at urna auctor pretium. Nunc id ligula faucibus, gravida nibh id, convallis est. Sed vitae odio in tortor placerat gravida." 
+        };
+
+        this.props.mockSignup(user);
+        // debugger
+        this.setState({ firstPage: false });
     }
 
     handleSubmit(e) {
@@ -69,10 +83,12 @@ class SignupForm extends React.Component {
 
     render() {
         // debugger
+        if (Object.keys(this.state.errors).length !== 0) {
+            this.state.firstPage = true; // flashes second page before going back to first page
+            // also may need to clear errors
+        }
         let page = this.state.firstPage ? (
                     <div>
-                        <br />
-                        <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
                         <br />
                         <input type="text" value={this.state.username} onChange={this.update("username")} placeholder="Username" />
                         <br />
@@ -80,12 +96,15 @@ class SignupForm extends React.Component {
                         <br />
                         <input type="password" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
                         <br />
-                        <button onClick={this.changePage}>Next Page</button>
+                        <input type="email" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
+                        <br />
+                        <button onClick={this.toPageTwo}>Next Page</button>
+                        {this.renderErrors()}
                     </div>
                                         ) : (
                     <div>
                         <br />
-                        <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Enter your resume..." />
+                        <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Enter your resume..." required/>
                         <br />
                         <input type="submit" value="Submit" />
                         {this.renderErrors()}

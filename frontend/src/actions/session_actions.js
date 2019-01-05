@@ -28,13 +28,18 @@ export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
 });
 
-// Upon signup, dispatch the approporiate action depending on which type of response we receieve from the backend
+// Upon signup, dispatch the appropriate action depending on which type of response we receive from the backend
 export const signup = user => dispatch => (
     APIUtil.signup(user).then(() => (
         dispatch(receiveUserSignIn())
     ), err => (
         dispatch(receiveErrors(err.response.data))
     ))
+);
+
+// Upon submitting first page of signup, mock response we receive would contain potential errors
+export const mockSignup = user => dispatch => (
+    APIUtil.mockSignup(user).then(() => {}, err => (dispatch(receiveErrors(err.response.data))) )
 );
 
 // Upon login, set the session token and dispatch the current user. Dispatch errors on failure.
