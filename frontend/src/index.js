@@ -3,6 +3,11 @@ import ReactDOM from "react-dom";
 import "./stylesheets/normalize.css";
 import "./stylesheets/index.css";
 import "./stylesheets/splash.css";
+import "./stylesheets/main_page.css";
+import "./stylesheets/navbar.css";
+import "./stylesheets/listings_index.css";
+import "./stylesheets/listing_details.css";
+
 // import App from "./App";
 // import * as serviceWorker from "./serviceWorker";
 // // We will create this component shortly

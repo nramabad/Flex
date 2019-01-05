@@ -1,0 +1,71 @@
+#listings-index-container {
+  font-size: 14px;
+  background: white;
+  color: #181818;
+  width: 40%;
+  overflow: auto;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+}
+
+#listings-index-header {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.listings-index-item-container {
+  height: 85px;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.listings-index-item-container:hover {
+  cursor: pointer;
+  background: #f6f8f9;
+}
+
+.listings-index-item-left {
+  margin: 10px 15px 15px 15px;
+}
+
+.listings-index-item-right {
+  margin: 15px 15px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-item-job-title {
+  font-size: 18px;
+  color:#1861bf;
+}
+
+.index-item-match-percentage {
+  font-size: 32px;
+  color: #808080;
+}
+
+.index-item-match-text {
+  color: #A9A9A9;
+  font-size: 13px;
+  text-align: center;
+  padding-right: 5px;
+}
+
+.index-item-location {
+  color: #A9A9A9;
+}
+
+.listings-index-item-container:hover .index-item-match-text, 
+.listings-index-item-container:hover .index-item-location {
+  color: #808080;
+}
+
+.listings-index-item-container:hover .index-item-match-percentage {
+  color: #181818;
+} 

@@ -1,13 +1,20 @@
-// src/components/main/main_page.js
-
 import React from 'react';
+import ListingsIndexContainer from "./listings_index/listings_index_container";
+import ListingDetailsContainer from "./listing_details/listing_details_container";
+import NavBar from '../nav/navbar.jsx';
 
 class MainPage extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>FLEX ON EM</h1>
+            <div className="stretch-container">
+                <div id="main-page-container">
+                    <NavBar />
+                    <div id="main-container">
+                        <ListingsIndexContainer />
+                        <ListingDetailsContainer />
+                    </div>
+                </div>
             </div>
         );
     }
