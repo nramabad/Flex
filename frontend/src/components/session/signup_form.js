@@ -13,13 +13,13 @@ class SignupForm extends React.Component {
             password2: '',
             resume: '',
             firstPage: true,
+            resumeErrors: '',
             errors: {}
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
-        this.toPageOne = this.toPageOne.bind(this);
-        this.toPageTwo = this.toPageTwo.bind(this);
+        this.nextPage = this.nextPage.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -36,24 +36,26 @@ class SignupForm extends React.Component {
         });
     }
 
-    toPageOne(e) {
-        e.preventDefault();
-        this.setState({ firstPage: true });
-    }
 
-    toPageTwo(e) {
-        e.preventDefault();
-        let user = { 
-            email: this.state.email, 
-            username: this.state.username, 
-            password: this.state.password, 
-            password2: this.state.password2, 
-            resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non erat at urna auctor pretium. Nunc id ligula faucibus, gravida nibh id, convallis est. Sed vitae odio in tortor placerat gravida." 
-        };
+    nextPage(e) {
+        // e.preventDefault();
+        // let user = { 
+        //     email: this.state.email, 
+        //     username: this.state.username, 
+        //     password: this.state.password, 
+        //     password2: this.state.password2, 
+        //     resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non erat at urna auctor pretium. Nunc id ligula faucibus, gravida nibh id, convallis est. Sed vitae odio in tortor placerat gravida." 
+        // };
 
-        this.props.mockSignup(user);
-        // debugger
-        this.setState({ firstPage: false });
+        // this.props.mockSignup(user)
+        if (this.state.resume.length > 50 && this.state.resume.length < 38380) {
+            this.setState( { firstPage: false } );
+
+        } else if (this.state.resume.length === 0) {
+            this.setState({ resumeErrors: "Resume field is required" });
+        } else {
+            this.setState({ resumeErrors: "Resume / CV must be between 50 and 38380 characters" });
+        }
     }
 
     handleSubmit(e) {
@@ -67,6 +69,18 @@ class SignupForm extends React.Component {
         };
 
         this.props.signup(user, this.props.history);
+    }
+    
+    renderResumeErrors() {
+        if (this.state.resumeErrors) { 
+            return (
+                <ul>
+                    <li key={`error-1`}>         
+                        {this.state.resumeErrors}
+                    </li>
+                </ul>
+            );
+        }
     }
 
     renderErrors() {
@@ -82,33 +96,28 @@ class SignupForm extends React.Component {
     }
 
     render() {
-        // debugger
-        if (Object.keys(this.state.errors).length !== 0) {
-            this.state.firstPage = true; // flashes second page before going back to first page
-            // also may need to clear errors
-        }
         let page = this.state.firstPage ? (
-                    <div>
-                        <br />
-                        <input type="text" value={this.state.username} onChange={this.update("username")} placeholder="Username" />
-                        <br />
-                        <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password" />
-                        <br />
-                        <input type="password" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
-                        <br />
-                        <input type="email" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
-                        <br />
-                        <button onClick={this.toPageTwo}>Next Page</button>
-                        {this.renderErrors()}
-                    </div>
+                            <div>
+                                <br />
+                                <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Enter your resume..." />
+                                <br />
+                                <button onClick={this.nextPage}>Next Page</button>
+                                {this.renderResumeErrors()}
+                            </div>
                                         ) : (
-                    <div>
-                        <br />
-                        <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Enter your resume..." required/>
-                        <br />
-                        <input type="submit" value="Sign Up" />
-                        {this.renderErrors()}
-                    </div>
+                            <div>
+                                <br />
+                                <input type="text" value={this.state.username} onChange={this.update("username")} placeholder="Username" />
+                                <br />
+                                <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password" />
+                                <br />
+                                <input type="password" value={this.state.password2} onChange={this.update("password2")} placeholder="Confirm Password" />
+                                <br />
+                                <input type="email" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
+                                <br />
+                                <input type="submit" value="Sign Up" />
+                                {this.renderErrors()}
+                            </div>
                                         );
         return <div className="login-form-container">
             <form onSubmit={this.handleSubmit}>
