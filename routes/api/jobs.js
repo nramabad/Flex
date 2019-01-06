@@ -8,14 +8,20 @@ const keywords = require("retext-keywords");
 const Job = require("../../models/Job");
 const User = require("../../models/User")
 const toString = require("nlcst-to-string");
+const passport = require("passport");
 
 
-router.get("/jobs", (req, res) => {
-  Job.find()
-    .sort({ date: -1 })
-    .then(resumes => res.json(resumes))
-    .catch(err => res.status(404).json({ noresumesfound: "No resumes found" }));
-});
+
+// router.get("/jobs",
+//     passport.authenticate("jwt", { session: false }),
+//     (req, res) => {
+//     console.log("test")
+//     debugger
+//     Job.find()
+//         .sort({ date: -1 })
+//         .then(resumes => res.json(resumes))
+//         .catch(err => res.status(404).json({ noresumesfound: "No resumes found" }));
+// });
 
 
 
@@ -40,7 +46,11 @@ router.get("/test", (req, res) => res.json({ msg: "This is the jobs route" }));
 //         );
 // });
 
-router.get('/', (req, res) => {
+// .sort()
+
+router.get('/',
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
     Job.find()
         .then(jobs => res.json(jobs))
 });
@@ -62,7 +72,6 @@ router.get('/github', (req, res) => {
 }); 
 
 const saveJobsToDb = (body) => {
-    debugger
     const jsonArray = JSON.parse(body);
     var words = []
     var phrases = []
@@ -77,16 +86,15 @@ const saveJobsToDb = (body) => {
                 if (docs.length) {
                 } else {
 
-                    debugger
+               
                     const done = (err, file) => {
                         if (err) throw err
-                        debugger
                         const stringify = val => (toString(val))
-                        debugger
+       
                         words = file.data.keywords.map(keyword => toString(keyword.matches[0].node));
                         phrases = file.data.keyphrases.map( keyphrase => keyphrase.matches[0].nodes.map(stringify).join(''));
                     }
-                    debugger
+       
                     retext()
                       .use(keywords)
                       .process(job.description, done);
@@ -106,7 +114,7 @@ const saveJobsToDb = (body) => {
                         jobKeywords: words,
                         jobKeyphrases: phrases
                     });
-                    debugger
+     
                     newJob.save();
                 }
             }
