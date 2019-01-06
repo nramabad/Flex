@@ -10,29 +10,29 @@ const validateResumeInput = require('../../validation/resumes');
 
 // MODIFY ROUTES WHEN IMPLEMENTING MULTIPLE RESUMES
 
-// router.get('/', (req, res) => {
-//     Resume.find()
-//         .sort({ date: -1 })
-//         .then(resumes => res.json(resumes))
-//         .catch(err => res.status(404).json({ noresumesfound: 'No resumes found' }));
-// });
+router.get('/resume', (req, res) => {
+    Resume.find()
+        .sort({ date: -1 })
+        .then(resumes => res.json(resumes))
+        .catch(err => res.status(404).json({ noresumesfound: 'No resumes found' }));
+});
 
-// router.get('/user/:user_id', (req, res) => {
-//     Resume.find({ user: req.params.user_id })
-//         .then(resumes => res.json(resumes))
-//         .catch(err =>
-//             res.status(404).json({ noresumesfound: 'No resumes found from that user' }
-//             )
-//         );
-// });
+router.get('/user/:user_id', (req, res) => {
+    Resume.find({ user: req.params.user_id })
+        .then(resumes => res.json(resumes))
+        .catch(err =>
+            res.status(404).json({ noresumesfound: 'No resumes found from that user' }
+            )
+        );
+});
 
-// router.get('/:id', (req, res) => {
-//     Resume.findById(req.params.id)
-//         .then(resume => res.json(resume))
-//         .catch(err =>
-//             res.status(404).json({ noresumefound: 'No resume found with that ID' })
-//         );
-// });
+router.get('/resume/:id', (req, res) => {
+    Resume.findById(req.params.id)
+        .then(resume => res.json(resume))
+        .catch(err =>
+            res.status(404).json({ noresumefound: 'No resume found with that ID' })
+        );
+});
 
 // FIX THIS LATER
 

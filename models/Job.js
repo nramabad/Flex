@@ -35,6 +35,12 @@ const JobSchema = new Schema({
         type: String,
         required: true
     },
+    jobKeywords: {
+        type: Array
+    },
+    jobKeyphrases: {
+        type: Array
+    },
     jobHowToApply: {
         type: String,
     },

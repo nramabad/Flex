@@ -2,9 +2,30 @@ const express = require("express");
 const router = express.Router();
 const request = require('request');
 const mongoose = require('mongoose');
+const stringSimilarity = require("string-similarity");
+const retext = require("retext");
+const keywords = require("retext-keywords");
+const Job = require("../../models/Job");
+const User = require("../../models/User")
+const toString = require("nlcst-to-string");
+
+
+router.get("/jobs", (req, res) => {
+  Job.find()
+    .sort({ date: -1 })
+    .then(resumes => res.json(resumes))
+    .catch(err => res.status(404).json({ noresumesfound: "No resumes found" }));
+});
+
+
+
+
+// 
+
+
 
 // const JobScore 
-const Job = require("../../models/Job");
+
 
 
 router.get("/test", (req, res) => res.json({ msg: "This is the jobs route" }));
@@ -36,13 +57,35 @@ router.get('/github', (req, res) => {
 }); 
 
 const saveJobsToDb = (body) => {
+    debugger
     const jsonArray = JSON.parse(body);
+    var words = []
+    var phrases = []
+
+    
     jsonArray.forEach( (job, idx) => {
+
+
         Job.find(
             { jobId: job.id },
             (err, docs) => {
                 if (docs.length) {
                 } else {
+
+                    debugger
+                    const done = (err, file) => {
+                        if (err) throw err
+                        debugger
+                        const stringify = val => (toString(val))
+                        debugger
+                        words = file.data.keywords.map(keyword => toString(keyword.matches[0].node));
+                        phrases = file.data.keyphrases.map( keyphrase => keyphrase.matches[0].nodes.map(stringify).join(''));
+                    }
+                    debugger
+                    retext()
+                      .use(keywords)
+                      .process(job.description, done);
+
                     const newJob = new Job({
                         jobId: job.id,
                         jobType: job.type,
@@ -54,9 +97,11 @@ const saveJobsToDb = (body) => {
                         jobTitle: job.title,
                         jobDescription: job.description,
                         jobHowToApply: job.how_to_apply,
-                        jobCompanyLogo: job.company_logo
+                        jobCompanyLogo: job.company_logo,
+                        jobKeywords: words,
+                        jobKeyphrases: phrases
                     });
-
+                    debugger
                     newJob.save();
                 }
             }
@@ -65,3 +110,6 @@ const saveJobsToDb = (body) => {
 }
 
 module.exports = router;
+
+
+

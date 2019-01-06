@@ -45,6 +45,7 @@
     "jwt-decode": "^2.2.0",
     "keyword-extractor": "0.0.15",
     "mongoose": "^5.4.0",
+    "nlcst-to-string": "^2.0.2",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "react": "^16.7.0",
@@ -56,6 +57,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "request": "^2.88.0",
+    "retext": "^6.0.1",
     "retext-keywords": "^4.0.2",
     "string-similarity": "^3.0.0",
     "validator": "^10.10.0"
