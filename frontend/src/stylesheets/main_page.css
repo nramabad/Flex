@@ -1,0 +1,23 @@
+#main-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 100%;
+  width: 100%;
+  background: #E4E3E5;
+}
+
+#main-container {
+  height: 90%;
+  margin: 15px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.stretch-container { 
+  height: 100%;
+  display: flex;
+
+}
