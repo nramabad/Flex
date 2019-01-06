@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getJobs = () => {
-  return axios.get('/api/jobs/')
+  return axios.get('/api/jobs/');
 };
 
 window.axios = axios;

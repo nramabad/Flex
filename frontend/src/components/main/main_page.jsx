@@ -9,7 +9,7 @@ class MainPage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchJobs()
+        this.props.fetchJobs();
     }
 
     render() {
