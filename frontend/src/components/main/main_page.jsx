@@ -4,6 +4,13 @@ import ListingDetailsContainer from "./listing_details/listing_details_container
 import NavBar from '../nav/navbar.jsx';
 
 class MainPage extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        this.props.fetchJobs()
+    }
 
     render() {
         return (

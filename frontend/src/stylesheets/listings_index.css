@@ -21,6 +21,7 @@
   border-bottom: 1px solid lightgray;
   display: flex;
   justify-content: space-between;
+   padding-right:18px;
 }
 
 .listings-index-item-container:hover {
