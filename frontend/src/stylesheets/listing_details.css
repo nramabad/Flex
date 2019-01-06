@@ -1,0 +1,15 @@
+#listing-details-container {
+  width: 60%;
+  background: white;
+  overflow: auto;
+}
+
+#listing-details-pane {
+  display: flex;
+  flex-direction: column;
+}
+
+#details-cover-image {
+  background: linear-gradient(to right, seagreen, purple);
+  height: 50px;
+}
