@@ -21,7 +21,8 @@
   border-bottom: 1px solid lightgray;
   display: flex;
   justify-content: space-between;
-   padding-right:18px;
+  padding-right:18px;
+  overflow: hidden;
 }
 
 .listings-index-item-container:hover {
@@ -44,6 +45,7 @@
 .index-item-job-title {
   font-size: 18px;
   color:#1861bf;
+  
 }
 
 .index-item-match-percentage {
