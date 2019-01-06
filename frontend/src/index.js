@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-
   ReactDOM.render(<Root store={store} />, root);
 });
 // If you want your app to work offline and load faster, you can change
