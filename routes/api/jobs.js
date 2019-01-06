@@ -48,8 +48,16 @@ router.get("/test", (req, res) => res.json({ msg: "This is the jobs route" }));
 
 // .sort()
 
+// With authentication required
+// router.get('/',
+//     passport.authenticate("jwt", { session: false }),
+//     (req, res) => {
+//     Job.find()
+//         .then(jobs => res.json(jobs))
+// });
+
+// No authentication required
 router.get('/',
-    // passport.authenticate("jwt", { session: false }),
     (req, res) => {
     Job.find()
         .then(jobs => res.json(jobs))
