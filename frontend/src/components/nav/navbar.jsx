@@ -3,8 +3,8 @@ import { logout } from '../../actions/session_actions';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
+// import { withStyles } from '@material-ui/core/styles';
+// import AppBar from '@material-ui/core/AppBar';
 
 class NavBar extends React.Component {
     constructor(props) {
