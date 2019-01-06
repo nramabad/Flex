@@ -16,6 +16,14 @@
   align-items: center;
 }
 
+#top-bar-right div {
+  padding: 10px;
+}
+
+#top-bar-right div:hover {
+  color: #6C6488;
+}
+
 #top-bar-left {
   display: flex;
   align-items: center;
@@ -23,6 +31,38 @@
 
 #top-bar-logo {
   margin-left: 15px;
+}
+
+/* Resume Upload Modal */
+
+.resume-upload-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+  background-color: #fff;
+  height: 84%;
+  max-height: 570px;
+  width: 66%;
+  max-width: 1080px;
+  font-family: 'Libre Franklin', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.resume-upload-modal-backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #4B4D63;
 }
 
 /* 
