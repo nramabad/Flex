@@ -25,6 +25,7 @@ const styles = theme => ({
     marginRight: theme.spacing.unit * 3,
     [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
       width: 400,
+      height:700,
       marginLeft: 'auto',
       marginRight: 'auto',
     },
@@ -194,7 +195,9 @@ const styles = theme => ({
                                       ) : (
                           <div>
                               <br />
+
                               <main className={classes.main}>
+
                                 <CssBaseline />
                                 <Paper className={classes.paper}>
                                   <Avatar className={classes.avatar}>
@@ -203,9 +206,10 @@ const styles = theme => ({
                                   <Typography component="h1" variant="h5">
                                     Sign Up
                                   </Typography>
+                                  {this.renderErrors()}
                                   <form className={classes.form} onSubmit={this.handleSubmit}>
                                     <FormControl margin="normal" required fullWidth>
-                                      <InputLabel htmlFor="email">Username</InputLabel>
+                                      <InputLabel>Username</InputLabel>
                                       <Input id="username" name="username" value={this.state.username} onChange={this.update("username")} autoFocus />
                                     </FormControl>
                                     <FormControl margin="normal" required fullWidth>
@@ -218,7 +222,7 @@ const styles = theme => ({
                                     </FormControl>
                                     <FormControl margin="normal" required fullWidth>
                                       <InputLabel htmlFor="email">Email Address</InputLabel>
-                                      <Input id="email" name="email" value={this.state.email} onChange={this.update("email")} autoComplete="email" autoFocus />
+                                      <Input id="email" name="email" value={this.state.email} onChange={this.update("email")} autoComplete="email"  />
                                     </FormControl>
 
                                     <FormControlLabel
@@ -237,7 +241,7 @@ const styles = theme => ({
                                     </Button>
                                   </form>
                                 </Paper>
-                                {this.renderErrors()}
+
                               </main>
 
                           </div>
