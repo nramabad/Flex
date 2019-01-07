@@ -148,6 +148,15 @@ class SignIn extends React.Component {
               Sign in
             </Button>
           </form>
+          <Button
+
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Demo Login
+          </Button>
         </Paper>
 
       </main>
