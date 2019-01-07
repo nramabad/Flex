@@ -11,7 +11,7 @@ class ListingsIndex extends React.Component {
 
 
   render() {
-    if (this.props.jobs === undefined || this.props.jobs.length === 0) {
+    if (this.props.jobs === undefined || this.props.jobs.length === 0 || this.props.currentResume === undefined) {
       return( 
         <div id="listings-index-container">
           <div id="listings-index-header">
@@ -20,22 +20,22 @@ class ListingsIndex extends React.Component {
         </div>
       );
     } else {
-      return (
-        <div id="listings-index-container">
+      debugger
+      return <div id="listings-index-container">
           <div id="listings-index-header">
             Displaying your {this.props.jobs.length} daily job listings
           </div>
           {this.props.jobs.map(job => (
-            <ListingsIndexItem 
-              key={job.jobId} 
-              title={job.jobTitle} 
-              company={job.jobCompany} 
+            <ListingsIndexItem
+              key={job.jobId}
+              title={job.jobTitle}
+              company={job.jobCompany}
               location={job.jobLocation}
-              resume={this.props.currentResume}
+              description={job.jobDescription}
+              currentResume={this.props.currentResume.text}
             />
           ))}
-        </div>
-      );
+        </div>;
     }
 
 
