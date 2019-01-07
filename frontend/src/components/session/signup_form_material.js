@@ -59,12 +59,29 @@ const styles = theme => ({
   submit: {
     marginTop: theme.spacing.unit * 3,
   },
+
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     width: 800
   },
 });
+
+const eStyle = {
+  color:`red`,
+  fontWeight: `bold`
+};
+const rStyle = {
+  color:`red`,
+  listStyleType: `none`,
+  textAlign: 'center',
+  fontWeight: `bold`
+};
+const errorlist = {
+  width: `100%`
+};
+
+
   class SignupMaterial extends React.Component {
     constructor(props) {
         super(props);
@@ -100,14 +117,6 @@ const styles = theme => ({
 
 
     nextPage(e) {
-        // e.preventDefault();
-        // let user = {
-        //     email: this.state.email,
-        //     username: this.state.username,
-        //     password: this.state.password,
-        //     password2: this.state.password2,
-        //     resume: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non erat at urna auctor pretium. Nunc id ligula faucibus, gravida nibh id, convallis est. Sed vitae odio in tortor placerat gravida."
-        // };
 
         // this.props.mockSignup(user)
         if (this.state.resume.length > 50 && this.state.resume.length < 38380) {
@@ -136,8 +145,8 @@ const styles = theme => ({
     renderResumeErrors() {
         if (this.state.resumeErrors) {
             return (
-                <ul>
-                    <li key={`error-1`}>
+                <ul >
+                    <li style={rStyle} key={`error-1`}>
                         {this.state.resumeErrors}
                     </li>
                 </ul>
@@ -147,9 +156,9 @@ const styles = theme => ({
 
     renderErrors() {
         return (
-            <ul>
+            <ul style={errorlist} >
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li style={eStyle} key={`error-${i}`}>
                         {this.state.errors[error]}
                     </li>
                 ))}
@@ -208,6 +217,7 @@ const styles = theme => ({
                                   </Typography>
                                   {this.renderErrors()}
                                   <form className={classes.form} onSubmit={this.handleSubmit}>
+
                                     <FormControl margin="normal" required fullWidth>
                                       <InputLabel>Username</InputLabel>
                                       <Input id="username" name="username" value={this.state.username} onChange={this.update("username")} autoFocus />
