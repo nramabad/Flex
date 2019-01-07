@@ -33,6 +33,10 @@
   margin-left: 15px;
 }
 
+#top-bar-logo:hover {
+  cursor: pointer;
+}
+
 /* Resume Upload Modal */
 
 .resume-upload-modal {

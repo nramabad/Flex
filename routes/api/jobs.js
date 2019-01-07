@@ -59,7 +59,7 @@ router.get("/test", (req, res) => res.json({ msg: "This is the jobs route" }));
 router.get('/',
     (req, res) => {
     Job.find()
-        .then(jobs => res.json(jobs))
+        .then(jobs => res.json(jobs));
 });
 
 router.get('/github', (req, res) => {
