@@ -18,13 +18,15 @@ class ResumeUploadModal extends React.Component {
     if (this.props.isOpen === false) {
       return null;
     } else {
-      return <div>
-          <div onClick={this.closeModal} className="resume-upload-modal-backdrop" />
-          <div className="resume-upload-modal">
-            <textarea />
-            <button>Upload Resume</button>
-          </div>
-        </div>;
+      return (
+        <div>
+            <div onClick={this.closeModal} className="resume-upload-modal-backdrop" />
+            <div className="resume-upload-modal">
+              <textarea />
+              <button>Upload Resume</button>
+            </div>
+        </div>
+      );
     }
   }
 
