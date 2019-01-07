@@ -1,9 +1,20 @@
 #listing-details-container {
   width: 60%;
+  min-width: 300px;
   background: white;
   overflow: auto;
   display: flex;
   justify-content: center;
+}
+
+#listing-details-pane-home {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: whitesmoke;
+  color: gray;
 }
 
 #listing-details-pane {
@@ -70,4 +81,8 @@ p, li {
 #listing-details-content-header a:hover {
   text-decoration: underline;
   color: gray;
+}
+
+#listing-details-content {
+  padding-bottom: 50px;
 }

@@ -15,7 +15,6 @@ class NavBar extends React.Component {
         this.state = { isModalOpen: false };
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        // this.getLinks = this.getLinks.bind(this);
     }
 
     openModal() {
@@ -38,7 +37,9 @@ class NavBar extends React.Component {
             <div>
                 <div id="top-bar-container">
                     <div id="top-bar-left">
-                        <div id="top-bar-logo">FlexJobs</div>
+                        <div id="top-bar-logo" onClick={() => this.props.history.push("/home")}>
+                            FlexJobs
+                        </div>
                     </div>
                     <div id="top-bar-right">
                         <div onClick={this.openModal}>Upload Resume</div>

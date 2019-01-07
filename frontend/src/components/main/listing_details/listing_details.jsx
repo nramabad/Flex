@@ -3,7 +3,16 @@ import React from 'react';
 class ListingDetails extends React.Component {
 
   render() {
-    return (
+    if (this.props.match.params.jobId === undefined) {
+      return (
+        <div id="listing-details-container">
+          <div id="listing-details-pane-home">
+            Click on the job listing to see details.
+          </div>
+        </div>
+        );
+    } else {
+      return (
       <div id="listing-details-container">
         <div id="listing-details-pane">
           {(this.props.job.jobCompanyLogo !== null) ? 
@@ -27,14 +36,10 @@ class ListingDetails extends React.Component {
 
             <div id="details-job-description" dangerouslySetInnerHTML={{"__html": this.props.job.jobDescription}} />
             <div id="details-job-apply" dangerouslySetInnerHTML={{"__html": this.props.job.jobHowToApply}} />
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
           </div>
         </div>
       </div>
-    );
+    )};
   }
 }
 
