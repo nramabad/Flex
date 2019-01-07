@@ -46,6 +46,13 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 3,
   },
 });
+const eStyle = {
+  color:`red`,
+  fontWeight: `bold`
+};
+const errorlist = {
+  width: `100%`
+};
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -93,9 +100,9 @@ class SignIn extends React.Component {
   // Render the session errors if there are any
   renderErrors() {
       return (
-          <ul>
+          <ul style={errorlist}>
               {Object.keys(this.state.errors).map((error, i) => (
-                  <li key={`error-${i}`}>
+                  <li style={eStyle} key={`error-${i}`}>
                       {this.state.errors[error]}
                   </li>
               ))}
@@ -116,6 +123,7 @@ class SignIn extends React.Component {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+          {this.renderErrors()}
           <form className={classes.form} onSubmit={this.handleSubmit}>
             <FormControl margin="normal" required fullWidth>
               <InputLabel htmlFor="email">Email Address</InputLabel>
@@ -141,7 +149,7 @@ class SignIn extends React.Component {
             </Button>
           </form>
         </Paper>
-        {this.renderErrors()}
+
       </main>
     );
   }

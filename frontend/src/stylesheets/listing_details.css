@@ -2,14 +2,72 @@
   width: 60%;
   background: white;
   overflow: auto;
+  display: flex;
+  justify-content: center;
 }
 
 #listing-details-pane {
-  display: flex;
-  flex-direction: column;
+  padding: 20px 20px 20px 20px;
+  display: block;
+  width: 85%;
 }
 
 #details-cover-image {
   background: linear-gradient(to right, seagreen, purple);
-  height: 50px;
+  height: 40px;
+}
+
+#listing-details-logo-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid darkgray;
+}
+
+#listing-details-logo {
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
+  flex: 1;
+  overflow: hidden;
+}
+
+p, li {
+  text-align: justify;
+}
+
+#listing-details-content-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+  border-bottom: 1px solid darkgray;
+}
+
+
+.details-job-company {
+  margin-top: 5px;
+}
+
+#details-job-title {
+  margin: -.35em 0;
+  text-align: center;
+}
+
+#listing-details-type-location {
+  color: darkgray;
+  display: flex;
+}
+
+#listing-details-content-header a, 
+#listing-details-content-header a:visited {
+  color: darkgray;
+  text-decoration: none;
+}
+
+#listing-details-content-header a:hover {
+  text-decoration: underline;
+  color: gray;
 }

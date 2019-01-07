@@ -9,8 +9,12 @@ class MainPage extends React.Component {
     }
 
     componentDidMount() {
+<<<<<<< HEAD
         this.props.fetchJobs()
         this.props.fetchUserResumes(this.props.user.id)
+=======
+        this.props.fetchJobs();
+>>>>>>> e13768bac73a6d5f7ba514b2416649e9d49d8a2b
     }
 
     render() {
