@@ -2,7 +2,7 @@
 
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
-import SignupForm from './signup_form';
+import SignupMaterial from './signup_form_material';
 
 const mapStateToProps = (state) => {
     return {
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(SignupForm);
+)(SignupMaterial);
