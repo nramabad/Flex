@@ -67,13 +67,13 @@ This problem decomposes into several areas of activity:
 
 ### Day 2 Thu ⅓
   - [X] Basic frontend with buttons and space to paste resume, skeleton for results **Nav**  
-  - [ ] After User Auth frontend/backend: Get heroku set up **Christina**
+  - [X] After User Auth frontend/backend: Get heroku set up **Nav**
   - [X] Test API (GitHub) calls with backend **George & Adi** 
 
 ### Day 3 Fri 1/4
   - [X] Exploring the model and npm packages **Nav** 
   - [ ] User resume frontend component **Adi** 
-  - [ ] Job listings frontend component **Christina** 
+  - [X] Job listings frontend component **Christina** 
   - [X] Backend queries to render for frontend components **George** 
 
 ### Day 4 and 5 
@@ -85,6 +85,6 @@ This problem decomposes into several areas of activity:
 
 ### Day 7 Tues 1/8 
   - [ ] Add readme **Adi**
-  - [ ] improve UX **Christina & George**
+  - [ ] Improve UX **Christina & George**
   - [ ] Fix bugs **Everyone**
 
