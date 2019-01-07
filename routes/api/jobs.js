@@ -100,11 +100,14 @@ const saveJobsToDb = (body) => {
        
                         words = file.data.keywords.map(keyword => toString(keyword.matches[0].node));
                         phrases = file.data.keyphrases.map( keyphrase => keyphrase.matches[0].nodes.map(stringify).join(''));
+            
                     }
+
+                    const description = job.description.replace(/\\n|<[^>]*>/ig, "");
        
                     retext()
                       .use(keywords)
-                      .process(job.description, done);
+                      .process(description, done);
 
                     const newJob = new Job({
                         jobId: job.id,
@@ -115,7 +118,7 @@ const saveJobsToDb = (body) => {
                         jobCompanyUrl: job.company_url,
                         jobLocation: job.location,
                         jobTitle: job.title,
-                        jobDescription: job.description,
+                        jobDescription: description,
                         jobHowToApply: job.how_to_apply,
                         jobCompanyLogo: job.company_logo,
                         jobKeywords: words,
