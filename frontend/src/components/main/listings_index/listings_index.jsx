@@ -20,19 +20,18 @@ class ListingsIndex extends React.Component {
         </div>
       );
     } else {
-      debugger
       return <div id="listings-index-container">
           <div id="listings-index-header">
             Displaying your {this.props.jobs.length} daily job listings
           </div>
+
           {this.props.jobs.map(job => (
             <ListingsIndexItem
               key={job.jobId}
               title={job.jobTitle}
               company={job.jobCompany}
               location={job.jobLocation}
-              description={job.jobDescription}
-              currentResume={this.props.currentResume.text}
+              resumeMatch={job.resumeMatch}
             />
           ))}
         </div>;

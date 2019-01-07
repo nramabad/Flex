@@ -13,10 +13,7 @@ class ListingsIndexItem extends React.Component {
         </div>
         <div className="listings-index-item-right">
           <div className="index-item-match-percentage">
-            {(stringSimilarity.compareTwoStrings(
-              this.props.description,
-              this.props.currentResume
-          ) * 100).toFixed(1)}
+            {this.props.resumeMatch.toFixed(1)}
             %
           </div>
           <div className="index-item-match-text">match</div>
