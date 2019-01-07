@@ -15,8 +15,8 @@ This problem decomposes into several areas of activity:
 
    - [X] User Auth
    - [X] Users can paste in their resume in raw text format  
-   - [ ] Compare resume and job listing and return matches using an API 
-   - [ ] Extract keyword with NLI for boolean query of resume/job listing
+   - [X] Compare resume and job listing and return matches using string comparison
+   - [X] Extract keyword with NLI for boolean query of resume/job listing
 
 #### Bonus Features
 
@@ -61,23 +61,23 @@ This problem decomposes into several areas of activity:
   - [X] mLab setup **Christina** 
   - [X] User Auth **Nav**
   - [X] Research APIs **George**  
-  - [ ] Frontend routes and components **Christina** 
+  - [X] Frontend routes and components **Christina** 
   - [X] Wireframe and design for website **Everyone** 
-  - [ ] Backend -- Resumes, Job Listing -- models, validations **George & Adi** 
+  - [X] Backend -- Resumes, Job Listing -- models, validations **George & Adi** 
 
 ### Day 2 Thu ⅓
   - [X] Basic frontend with buttons and space to paste resume, skeleton for results **Nav**  
   - [ ] After User Auth frontend/backend: Get heroku set up **Christina**
-  - [ ] Test API (GitHub) calls with backend **George & Adi** 
+  - [X] Test API (GitHub) calls with backend **George & Adi** 
 
 ### Day 3 Fri 1/4
-  - [ ] Exploring the model and npm packages **Nav** 
+  - [X] Exploring the model and npm packages **Nav** 
   - [ ] User resume frontend component **Adi** 
   - [ ] Job listings frontend component **Christina** 
-  - [ ] Backend queries to render for frontend components **George** 
+  - [X] Backend queries to render for frontend components **George** 
 
 ### Day 4 and 5 
-  - [ ] Catch up on incomplete tasks from Days 1-3 **Everyone**
+  - [X] Catch up on incomplete tasks from Days 1-3 **Everyone**
 
 ### Day 6 Mon 1/7
   - [ ] Frontend components **Nav & Adi**
