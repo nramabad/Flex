@@ -1,6 +1,6 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
-const validResumeInput = require('./resume');
+const validResumeInput = require('./resumes');
 
 module.exports = function validateRegisterInput(data) {
     let errors = {};

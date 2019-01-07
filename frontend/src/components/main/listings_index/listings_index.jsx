@@ -9,6 +9,7 @@ class ListingsIndex extends React.Component {
     }
   }
 
+
   render() {
     if (this.props.jobs === undefined || this.props.jobs.length === 0) {
       return( 
@@ -30,6 +31,7 @@ class ListingsIndex extends React.Component {
               title={job.jobTitle} 
               company={job.jobCompany} 
               location={job.jobLocation}
+              resume={this.props.currentResume}
             />
           ))}
         </div>

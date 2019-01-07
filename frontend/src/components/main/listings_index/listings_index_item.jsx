@@ -1,7 +1,7 @@
 import React from 'react';
 
-
 class ListingsIndexItem extends React.Component {
+
 
   render() {
     return (

@@ -25,6 +25,8 @@ import { setAuthToken } from "./util/session_api_util";
 // We have not created this action yet, but will do so in the next step
 import { logout } from "./actions/session_actions";
 
+import { fetchResumes, fetchUserResumes } from "./actions/resume_actions"
+
 document.addEventListener("DOMContentLoaded", () => {
 
   let store;
@@ -60,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.fetchResumes = fetchResumes
+    window.fetchUserResumes = fetchUserResumes
   ReactDOM.render(<Root store={store} />, root);
 });
 // If you want your app to work offline and load faster, you can change

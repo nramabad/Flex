@@ -6,12 +6,14 @@ import ListingsIndex from "./listings_index";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    jobs: state.jobs.data
+    jobs: state.jobs.data,
+    currentResume: state.resumes[0]
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    
   };
 };
 

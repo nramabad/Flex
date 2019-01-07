@@ -8,9 +8,10 @@ const passport = require('passport');
 const Resume = require('../../models/Resume');
 const validateResumeInput = require('../../validation/resumes');
 
-// MODIFY ROUTES WHEN IMPLEMENTING MULTIPLE RESUMES
 
-router.get('/resume', (req, res) => {
+router.get("/test", (req, res) => res.json({ msg: "This is the jobs route" }));
+
+router.get('/', (req, res) => {
     Resume.find()
         .sort({ date: -1 })
         .then(resumes => res.json(resumes))
@@ -26,7 +27,7 @@ router.get('/user/:user_id', (req, res) => {
         );
 });
 
-router.get('/resume/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     Resume.findById(req.params.id)
         .then(resume => res.json(resume))
         .catch(err =>
@@ -54,4 +55,4 @@ router.get('/resume/:id', (req, res) => {
 //     }
 // );
 
-// module.exports = router;
+module.exports = router;

@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const request = require('request');
 const mongoose = require('mongoose');
-const stringSimilarity = require("string-similarity");
 const retext = require("retext");
 const keywords = require("retext-keywords");
 const Job = require("../../models/Job");
