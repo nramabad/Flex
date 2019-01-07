@@ -66,6 +66,12 @@ class SignIn extends React.Component {
 
       this.handleSubmit = this.handleSubmit.bind(this);
       this.renderErrors = this.renderErrors.bind(this);
+      this.demoLogin = this.demoLogin.bind(this);
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    this.props.loginDemo();
   }
 
   // Once the user has been authenticated, redirect to the Home page
@@ -149,7 +155,7 @@ class SignIn extends React.Component {
             </Button>
           </form>
           <Button
-
+            onClick={this.demoLogin}
             fullWidth
             variant="contained"
             color="primary"
