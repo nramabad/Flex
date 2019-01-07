@@ -11,5 +11,9 @@ export const listingsSelector = (state) => {
             ) * 100)
       )
     state.jobs.sort((a, b) => b.resumeMatch - a.resumeMatch);
+    const padding = 90 - Math.floor(state.jobs[0].resumeMatch/10)*10
+    state.jobs.forEach(
+        job => job.resumeMatch += padding
+    )
     return state
 };
