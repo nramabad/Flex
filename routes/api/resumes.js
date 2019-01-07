@@ -1,7 +1,7 @@
 // routes/api/resumes.js
 
 const express = require('express');
-const router = express.Router();
+const router = express.Router(); 
 const mongoose = require('mongoose');
 const passport = require('passport');
 
@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
 
 router.get('/user/:user_id', (req, res) => {
     Resume.find({ user: req.params.user_id })
+        .sort({ date: -1 })
         .then(resumes => res.json(resumes))
         .catch(err =>
             res.status(404).json({ noresumesfound: 'No resumes found from that user' }
@@ -35,24 +36,22 @@ router.get('/:id', (req, res) => {
         );
 });
 
-// FIX THIS LATER
+router.post('/',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        const { errors, isValid } = validateResumeInput(req.body);
 
-// router.post('/resume',
-//     passport.authenticate('jwt', { session: false }),
-//     (req, res) => {
-//         const { errors, isValid } = validateResumeInput(req.body);
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
 
-//         if (!isValid) {
-//             return res.status(400).json(errors);
-//         }
+        const newResume = new Resume({
+            text: req.body.text,
+            user: req.user.id
+        });
 
-//         const newResume = new Resume({
-//             text: req.body.text,
-//             user: req.user.id
-//         });
-
-//         newResume.save().then(resume => res.json(resume));
-//     }
-// );
+        newResume.save().then(resume => res.json(resume));
+    }
+);
 
 module.exports = router;

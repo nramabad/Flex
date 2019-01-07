@@ -11,7 +11,7 @@ class ListingsIndex extends React.Component {
 
 
   render() {
-    if (this.props.jobs === undefined || this.props.jobs.length === 0 || this.props.currentResume === undefined) {
+    if (this.props.jobs[0].jobsDescription === "" || this.props.currentResume === "" || this.props.jobs.length === 1) {
       return( 
         <div id="listings-index-container">
           <div id="listings-index-header">
