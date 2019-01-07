@@ -22,7 +22,6 @@
   display: flex;
   justify-content: space-between;
   padding-right:18px;
-  overflow: hidden;
 }
 
 .listings-index-item-container:hover {
@@ -31,11 +30,18 @@
 }
 
 .listings-index-item-left {
-  margin: 10px 15px 15px 15px;
+  margin: 10px 10px 10px 15px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .listings-index-item-right {
-  margin: 15px 15px 15px 15px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
