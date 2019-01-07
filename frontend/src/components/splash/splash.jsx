@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { login } from "../../actions/session_actions";
-
+import {Link}from 'react-router-dom';
 class SplashPage extends React.Component {
 
   constructor(props) {
@@ -24,9 +24,11 @@ class SplashPage extends React.Component {
           <div className="splash-page-content-item" id="splash-subtitle">
             Job searching made easy.
           </div>
-          <button onClick={this.demoLogin} className="splash-page-content-item" id="splash-try-button">
+          <Link to="/login" style={{ textDecoration: 'none' }}>
+          <button className="splash-page-content-item" id="splash-try-button">
             Try now
           </button>
+          </Link>
         </div>
       </div>
     );
