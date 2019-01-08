@@ -1,5 +1,4 @@
 import React from 'react';
-const stringSimilarity = require("string-similarity");
 
 class ListingsIndexItem extends React.Component {
   handleClick(jobId) {

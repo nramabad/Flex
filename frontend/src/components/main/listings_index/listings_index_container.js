@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   return listingsSelector({
     jobs: jobs,
     currentResume: currentResume
-  });;
+  });
 };
 
 const mapDispatchToProps = (dispatch) => {
