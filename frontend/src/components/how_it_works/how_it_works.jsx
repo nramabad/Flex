@@ -3,7 +3,7 @@ import NavBar from "../nav/navbar";
 
 export default class HowItWorks extends Component {
   render() {
-    return <div>
+    return <div id="main-page-container">
         <NavBar />
         <div className="how-it-works-container">
           <div className="how-it-works-contents">

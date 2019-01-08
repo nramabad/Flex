@@ -30,29 +30,27 @@ class NavBar extends React.Component {
     }
 
     render() {
-        return <div>
-            <div id="top-bar-container">
-              <div id="top-bar-left">
-                <div id="top-bar-logo" onClick={() => this.props.history.push("/home")}>
-                  <div id="logo-monogram">fj</div>
-                  <span>flexjobs</span>
+        return (
+            <div>
+                <div id="top-bar-container">
+                    <div id="top-bar-left">
+                        <div id="top-bar-logo" onClick={() => this.props.history.push("/home")}>
+                            <div id="logo-monogram">fj</div>
+                            <span>flexjobs</span>
+                        </div>
+                    </div>
+                    <div id="top-bar-right">
+                        <div id="about-button" onClick={() => this.props.history.push("/about")}>About</div>
+                        <div id="how-it-works-button" onClick={() => this.props.history.push("/how-it-works")}>How It Works</div>
+                        <div id="navbar-resume-button" onClick={this.openModal}>
+                            Update Resume
+                        </div>
+                        <div id="logout-button" onClick={this.logoutUser}>Log Out</div>
+                    </div>
                 </div>
-              </div>
-              <div id="top-bar-right">
-                <div id="about-button">About</div>
-                <div id="how-it-works-button" onClick={() => this.props.history.push("/how-it-works")}>
-                  How It Works
-                </div>
-                <div id="navbar-resume-button" onClick={this.openModal}>
-                  Update Resume
-                </div>
-                <div id="logout-button" onClick={this.logoutUser}>
-                  Log Out
-                </div>
-              </div>
+                <ResumeUploadModal loggedIn={Boolean(this.props.currentUser)} isOpen={this.state.isModalOpen} onClose={this.closeModal} />
             </div>
-            <ResumeUploadModal loggedIn={Boolean(this.props.currentUser)} isOpen={this.state.isModalOpen} onClose={this.closeModal} />
-          </div>;
+        );
     }
 }
 
