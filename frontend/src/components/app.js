@@ -8,6 +8,7 @@ import SplashPage from './splash/splash';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import MainPageContainer from "./main/main_page_container";
+import HowItWorksContainer from "./how_it_works/how_it_works_container";
 
 const App = () => (
   <div id="app-page">
@@ -15,6 +16,8 @@ const App = () => (
       <Route exact path="/" component={SplashPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Route path="/home/:jobId?" component={MainPageContainer} />
+      <Route path="/how-it-works" component={HowItWorksContainer} />
       <ProtectedRoute exact path="/home/:jobId?/:analysis?" component={MainPageContainer} />
     </Switch>
   </div>

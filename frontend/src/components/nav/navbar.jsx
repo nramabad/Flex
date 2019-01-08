@@ -41,6 +41,7 @@ class NavBar extends React.Component {
                     </div>
                     <div id="top-bar-right">
                         <div id="about-button">About</div>
+                        <div>How It Works</div>
                         <div id="navbar-resume-button" onClick={this.openModal}>
                             Update Resume
                         </div>
