@@ -27,7 +27,6 @@ class ListingDetails extends React.Component {
     //     </div>
     //   );
     } else {
-      debugger;
       let content, toggleText, toggleUrl;
       if (this.props.match.params.analysis === "analysis") {
         content = <CloudDetail words={this.props.job.jobKeywords} />

@@ -53,6 +53,11 @@
   width: 40%;
   height: 40%;
   margin: 20px;
+  transition: transform .2s;
+}
+
+.team-profile-box:hover {
+  transform: scale(1.05);
 }
 
 .profile-link-icon:hover {
