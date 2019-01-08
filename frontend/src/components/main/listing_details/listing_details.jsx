@@ -1,5 +1,6 @@
 import React from 'react';
 import CloudDetail from './cloud_detail';
+import JobsReducer from '../../../reducers/jobs_reducer';
 
 class ListingDetails extends React.Component {
 
@@ -28,7 +29,7 @@ class ListingDetails extends React.Component {
     } else {
       let content, toggleText, toggleUrl;
       if (this.props.match.params.analysis === "analysis") {
-        content = this.props.job.resumeMatch
+        content = <CloudDetail words={this.props.job.jobKeywords} />
         toggleText = "Back to Listing"
         toggleUrl=`/home/${this.props.job.jobId}`
       } else {
