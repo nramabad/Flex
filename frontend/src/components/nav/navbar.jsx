@@ -42,6 +42,7 @@ class NavBar extends React.Component {
                         </div>
                     </div>
                     <div id="top-bar-right">
+                        <div>How It Works</div>
                         <div onClick={this.openModal}>Upload Resume</div>
                         <div>Profile</div>
                         <div onClick={this.logoutUser}>Log Out</div>

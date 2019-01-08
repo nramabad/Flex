@@ -39,7 +39,7 @@ class ListingDetails extends React.Component {
           </div>
         </div>
       </div>
-    )};
+    )}
   }
 }
 
