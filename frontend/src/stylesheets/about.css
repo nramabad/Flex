@@ -8,6 +8,8 @@
   max-width: 900px;
   overflow: auto;
   position: relative;
+  border-radius: 5px;
+  border: 1px solid transparent;
 }
 
 #about-container section {
@@ -70,12 +72,11 @@
   text-align: center;
 }
 
-#credits {
+#credits-section {
   position: absolute;
   bottom: 0px;
   border-top: 1px solid darkgray;
   padding-top: 15px;
-  margin: 15px 15px 50px 15px;
   font-size: 0.8em;
   color: darkgray;
 }
