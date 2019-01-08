@@ -3,10 +3,7 @@ import { logout } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import ResumeUploadModal from "./resume_upload_modal";
-// import { withStyles } from '@material-ui/core/styles';
-// import AppBar from '@material-ui/core/AppBar';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -38,13 +35,16 @@ class NavBar extends React.Component {
                 <div id="top-bar-container">
                     <div id="top-bar-left">
                         <div id="top-bar-logo" onClick={() => this.props.history.push("/home")}>
-                            FlexJobs
+                            <div id="logo-monogram">fj</div>
+                            <span>flexjobs</span>
                         </div>
                     </div>
                     <div id="top-bar-right">
-                        <div onClick={this.openModal}>Upload Resume</div>
-                        <div>Profile</div>
-                        <div onClick={this.logoutUser}>Log Out</div>
+                        <div id="about-button">About</div>
+                        <div id="navbar-resume-button" onClick={this.openModal}>
+                            Update Resume
+                        </div>
+                        <div id="logout-button" onClick={this.logoutUser}>Log Out</div>
                     </div>
                 </div>
                 <ResumeUploadModal loggedIn={Boolean(this.props.currentUser)} isOpen={this.state.isModalOpen} onClose={this.closeModal} />
