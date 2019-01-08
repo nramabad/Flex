@@ -1,19 +1,35 @@
 .how-it-works-container {
     display: flex;
     justify-content: center;
+    align-self: center;
+    background: white;
+    height: 90%;
+    margin: 65px 50px 25px 50px;
+    max-width: 900px;
+    border: 1px solid transparent;
+    border-radius: 5px;
 }
 
 .how-it-works-contents {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 90%;
+    
+}
+
+.how-it-works-contents h1 {
+    text-align: center;
+    border-bottom: 1px solid darkgray;
+    padding: 10px 0px;
     width: 100%;
+    
 }
 
 .how-it-works-items {
     display: flex;
     margin: 0 auto;
-    padding: 0 40px;
+    padding-left: 0;
 }
 
 .how-it-works-item {

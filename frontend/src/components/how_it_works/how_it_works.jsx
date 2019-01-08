@@ -3,11 +3,12 @@ import NavBar from "../nav/navbar";
 
 export default class HowItWorks extends Component {
   render() {
-    return <div>
+    return <div id="main-page-container">
         <NavBar />
         <div className="how-it-works-container">
           <div className="how-it-works-contents">
             <h1>How It Works</h1>
+            <hr/>
             <ol className="how-it-works-items">
               <li className="how-it-works-item">
                 <img className="how-it-works-image" alt="ImageUpload"src={require('../../images/iconmonstr-upload-20-240.png')} />
