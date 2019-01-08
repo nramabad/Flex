@@ -17,6 +17,11 @@
   width: 90%;
 }
 
+#repo-link {
+  display: inline-block;;
+  margin-top: 15px;
+}
+
 #about-container section h1 {
   border-bottom: 1px solid darkgray;
   padding: 10px 0px;
