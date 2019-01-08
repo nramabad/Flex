@@ -1,9 +1,11 @@
 import React from 'react';
+import CloudDetail from './cloud_detail';
 
 class ListingDetails extends React.Component {
 
   render() {
-    if (this.props.match.params.jobId === undefined) {
+
+    if (this.props.match.params.jobId === undefined || this.props.job === "") {
       return (
         <div id="listing-details-container">
           <div id="listing-details-pane-home">
@@ -12,6 +14,7 @@ class ListingDetails extends React.Component {
         </div>
         );
     } else {
+      // debugger
       return (
       <div id="listing-details-container">
         <div id="listing-details-pane">
