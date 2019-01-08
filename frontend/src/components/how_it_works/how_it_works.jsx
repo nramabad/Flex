@@ -8,6 +8,7 @@ export default class HowItWorks extends Component {
         <div className="how-it-works-container">
           <div className="how-it-works-contents">
             <h1>How It Works</h1>
+            <hr/>
             <ol className="how-it-works-items">
               <li className="how-it-works-item">
                 <img className="how-it-works-image" alt="ImageUpload"src={require('../../images/iconmonstr-upload-20-240.png')} />

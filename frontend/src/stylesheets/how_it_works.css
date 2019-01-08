@@ -3,6 +3,10 @@
     justify-content: center;
 }
 
+.how-it-works-container h1 {
+    margin-top: 70px;
+}
+
 .how-it-works-contents {
     display: flex;
     flex-direction: column;
