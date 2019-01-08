@@ -13,14 +13,44 @@ class ListingDetails extends React.Component {
           </div>
         </div>
         );
+    // } else if (this.props.match.params.analysis === "analysis") {
+    //   return (
+    //     <div id="listing-details-container">
+    //       <div id="listing-details-pane-analysis">
+    //         <div id="details-analysis-toggle" onClick={() => this.props.history.push(`/home/${this.props.job.jobId}`)}>
+    //           <span>Back to listing</span>
+    //         </div>
+    //         Analysis Page<br></br>
+    //         {this.props.job.resumeMatch}
+    //       </div>
+    //     </div>
+    //   );
     } else {
-      // debugger
+      let content, toggleText, toggleUrl;
+      if (this.props.match.params.analysis === "analysis") {
+        content = this.props.job.resumeMatch
+        toggleText = "Back to Listing"
+        toggleUrl=`/home/${this.props.job.jobId}`
+      } else {
+        content = (
+          <div>
+            <div id="details-job-description" dangerouslySetInnerHTML={{ "__html": this.props.job.jobDescription }} />
+            <div id="details-job-apply" dangerouslySetInnerHTML={{ "__html": this.props.job.jobHowToApply }} />
+          </div>
+        )
+        toggleText = "Match Analysis"
+        toggleUrl = `/home/${this.props.job.jobId}/analysis`
+      }
+
       return (
       <div id="listing-details-container">
         <div id="listing-details-pane">
+          <div id="details-analysis-toggle">
+              <span onClick={() => this.props.history.push(toggleUrl)}>{toggleText}</span>
+          </div>
           {(this.props.job.jobCompanyLogo !== null) ? 
             ( <div id="listing-details-logo-container">
-                <img id="listing-details-logo" src={this.props.job.jobCompanyLogo} />
+                <img id="listing-details-logo" src={this.props.job.jobCompanyLogo} alt="company-logo"/>
               </div>  ) : "" }
           <div id="listing-details-content">
             <div id="listing-details-content-header">
@@ -36,13 +66,11 @@ class ListingDetails extends React.Component {
                 <div id="details-job-company" dangerouslySetInnerHTML={{"__html": this.props.job.jobCompany}} />
               </a>
             </div>
-
-            <div id="details-job-description" dangerouslySetInnerHTML={{"__html": this.props.job.jobDescription}} />
-            <div id="details-job-apply" dangerouslySetInnerHTML={{"__html": this.props.job.jobHowToApply}} />
+            {content}
           </div>
         </div>
       </div>
-    )};
+    )}
   }
 }
 

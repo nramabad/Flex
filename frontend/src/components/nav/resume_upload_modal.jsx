@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
 
 class ResumeUploadModal extends React.Component {
   constructor(props) {
