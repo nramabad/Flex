@@ -5,6 +5,7 @@
   overflow: auto;
   display: flex;
   justify-content: center;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
 }
 
 #listing-details-pane-home {
@@ -85,4 +86,25 @@ p, li {
 
 #listing-details-content {
   padding-bottom: 50px;
+}
+
+#listing-details-pane-analysis {
+  width: 100%;
+  padding: 20px;
+}
+
+#details-analysis-toggle {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#details-analysis-toggle span:hover {
+  cursor: pointer;
+  color: darkgray;
+}
+
+#details-analysis-toggle span {
+  text-decoration: underline;
+  color: gray;
+  font-size: .9em;
 }

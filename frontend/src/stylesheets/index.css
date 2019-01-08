@@ -28,6 +28,31 @@ code {
     monospace;
 }
 
+#session-form-logo-container {
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+    border: 2px solid #6BBAA7;
+    border-radius: 10px;
+    padding: 5px 5px;
+}
+
+#session-form-logo {
+  background-image: url("../fj.png");
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  /* margin-right: 10px; */
+}
+
+#session-form-logo-container span {
+  font-feature-settings: "liga" 0;
+  letter-spacing: 10px;
+  font-size: 1.25em;
+}
+
 /* 
 almost-black: #151b26
 green: #6BBAA7

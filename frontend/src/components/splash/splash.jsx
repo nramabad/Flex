@@ -25,9 +25,9 @@ class SplashPage extends React.Component {
             Job searching made easy.
           </div>
           <Link to="/login" style={{ textDecoration: 'none' }}>
-          <button className="splash-page-content-item" id="splash-try-button">
+          <div className="splash-page-content-item" id="splash-try-button">
             Try now
-          </button>
+          </div>
           </Link>
         </div>
       </div>

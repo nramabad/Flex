@@ -118,7 +118,7 @@ const saveJobsToDb = (body) => {
                         jobCompanyUrl: job.company_url,
                         jobLocation: job.location,
                         jobTitle: job.title,
-                        jobDescription: description,
+                        jobDescription: job.description,
                         jobHowToApply: job.how_to_apply,
                         jobCompanyLogo: job.company_logo,
                         jobKeywords: words,
