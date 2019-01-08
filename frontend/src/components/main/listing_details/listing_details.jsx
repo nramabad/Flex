@@ -27,9 +27,15 @@ class ListingDetails extends React.Component {
     //     </div>
     //   );
     } else {
-      let content, toggleText, toggleUrl;
+      let content, toggleText, toggleUrl
+      let words = [];
       if (this.props.match.params.analysis === "analysis") {
-        content = <CloudDetail words={this.props.job.jobKeywords} />
+        this.props.job.jobKeyphrases.concat(this.props.job.jobKeywords).forEach(word => {
+          if (words.indexOf(word) === -1) { 
+            words.push(word);
+          } 
+        });
+        content = <CloudDetail words={words} weight={this.props.job.phraseWeight} />
         toggleText = "Back to Listing"
         toggleUrl=`/home/${this.props.job.jobId}`
       } else {
