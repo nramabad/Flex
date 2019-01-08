@@ -1,15 +1,19 @@
 #about-container {
   width: 90%;
   background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
   max-width: 900px;
   overflow: auto;
-  position: relative;
   border-radius: 5px;
   border: 1px solid transparent;
+}
+
+#about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 100%;
 }
 
 #about-container section {
@@ -31,6 +35,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 70px;
 }
 
 .profile-team-name {
@@ -53,11 +58,11 @@
   width: 40%;
   height: 40%;
   margin: 20px;
-  transition: transform .2s;
 }
 
 .team-profile-box:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .profile-link-icon:hover {
@@ -86,7 +91,7 @@
   position: absolute;
   bottom: 0px;
   border-top: 1px solid darkgray;
-  padding-top: 15px;
+  padding: 15px 0px;
   font-size: 0.8em;
   color: darkgray;
 }
