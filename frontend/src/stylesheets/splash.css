@@ -31,16 +31,19 @@
 }
 
 #splash-try-button {
+  margin-top: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 40px;
-  min-width: 140px;
+  min-width: 120px;
   border-radius: 4px;
   background: #6BBAA7;
   border-color: #6BBAA7;
+  color: white;
 }
 
 #splash-try-button:hover {
   cursor: pointer;
+  background:#58A492;
 }

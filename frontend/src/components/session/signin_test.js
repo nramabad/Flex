@@ -14,6 +14,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
 const styles = theme => ({
   main: {
     width: 'auto',
@@ -122,9 +123,13 @@ class SignIn extends React.Component {
       <main className={classes.main}>
         <CssBaseline />
         <Paper className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockIcon />
-          </Avatar>
+          {/* <Avatar className={classes.avatar}> */}
+            {/* <LockIcon /> */}
+            <div id="session-form-logo-container">
+              <div id="session-form-logo"></div>
+              {/* <span>flexjobs</span> */}
+            </div>
+          {/* </Avatar> */}
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>

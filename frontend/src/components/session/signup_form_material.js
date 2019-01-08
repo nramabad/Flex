@@ -209,9 +209,13 @@ const errorlist = {
 
                                 <CssBaseline />
                                 <Paper className={classes.paper}>
-                                  <Avatar className={classes.avatar}>
+                                  {/* <Avatar className={classes.avatar}>
                                     <Account/>
-                                  </Avatar>
+                                  </Avatar> */}
+                                  <div id="session-form-logo-container">
+                                    <div id="session-form-logo"></div>
+                                    {/* <span>flexjobs</span> */}
+                                  </div>
                                   <Typography component="h1" variant="h5">
                                     Sign Up
                                   </Typography>
