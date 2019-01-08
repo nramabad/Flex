@@ -51,6 +51,7 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 5px;
+  overflow: scroll;
 }
 
 .resume-upload-modal-backdrop {
@@ -66,7 +67,7 @@
   opacity: 0.5;
 }
 
-/* 
+/*
 .top-bar-gradient-button {
   background: linear-gradient(to top right, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
   border-style: none;

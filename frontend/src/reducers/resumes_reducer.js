@@ -13,8 +13,8 @@ const ResumesReducer = (state = {}, action) => {
     case RECEIVE_RESUMES:
     case RECEIVE_USER_RESUMES:
         return action.resumes.data;
-    case RECEIVE_NEW_RESUME: 
-        let newState = Object.assign({}, state, action.resumes.data);
+    case RECEIVE_NEW_RESUME:
+        let newState = Object.assign({}, state, action.resume.data);
         return newState;
     default:
         return state;
