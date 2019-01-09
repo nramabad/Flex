@@ -13,7 +13,7 @@ class AboutPage extends React.Component {
               <div id="about-content">
               <section id="about-project-section">
                 <h1>About The Project</h1>
-                FlexJobs is a demonstration project created using the MERN stack (MongoDB, Express.js, React.js, Node.js). Additional technologies include&nbsp;  
+                FlexJobs is a demonstration project created using the MERN stack (MongoDB, Express.js, React.js, Node.js). Additional technologies include HTML Canvas,&nbsp;  
                 <a href="https://material-ui.com/" target="_blank" rel="noopener noreferrer">
                   Material UI
                 </a>
