@@ -41,8 +41,6 @@ router.post('/',
     (req, res) => {
         const { errors, isValid } = validateResumeInput(req.body.text);
 
-        console.log(req.body);
-
         if (!isValid) {
             return res.status(400).json(errors);
         }
