@@ -7,6 +7,8 @@ import "./stylesheets/main_page.css";
 import "./stylesheets/navbar.css";
 import "./stylesheets/listings_index.css";
 import "./stylesheets/listing_details.css";
+import "./stylesheets/about.css";
+import "./stylesheets/how_it_works.css";
 
 // import App from "./App";
 // import * as serviceWorker from "./serviceWorker";
@@ -60,6 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Render our root component and pass in the store as a prop
   const root = document.getElementById("root");
+  // const svg = document.getElementById("svg");
+  // if (svg) { 
+  //   svg.removeAttribute("width");
+  //   svg.removeAttribute("height");
+  //   svg.setAttribute("viewBox", "0 0 800 600");
+  // }
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.fetchResumes = fetchResumes

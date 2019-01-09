@@ -28,6 +28,8 @@ class ListingsIndex extends React.Component {
           {this.props.jobs.map(job => (
             <ListingsIndexItem
               key={job.jobId}
+              history={this.props.history}
+              jobId={job.jobId}
               title={job.jobTitle}
               company={job.jobCompany}
               location={job.jobLocation}

@@ -1,0 +1,105 @@
+#about-container {
+  width: 90%;
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+  max-width: 900px;
+  overflow: auto;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+
+#about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 100%;
+}
+
+#about-container section {
+  text-align: center;
+  width: 90%;
+}
+
+#repo-link {
+  display: inline-block;;
+  margin-top: 15px;
+}
+
+#about-container section h1 {
+  border-bottom: 1px solid darkgray;
+  padding: 10px 0px;
+}
+
+#team-profiles{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+
+.profile-team-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+#team-profiles span {
+  font-size: 1.17em;
+  font-weight: 700;
+}
+
+.team-profile-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid darkgray;
+  border-radius: 10px;
+  width: 40%;
+  height: 40%;
+  margin: 20px;
+}
+
+.team-profile-box:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.profile-link-icon:hover {
+  cursor: pointer;
+}
+
+.profile-link-icon svg {
+  height: 40px;
+  width: 40px;
+  margin-right: 15px;
+}
+
+.profile-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.profile-blurb {
+  margin: 0px 15px 15px 15px;
+  text-align: center;
+}
+
+#credits-section {
+  position: absolute;
+  bottom: 0px;
+  border-top: 1px solid darkgray;
+  padding: 15px 0px;
+  font-size: 0.8em;
+  color: darkgray;
+}
+
+#credits a {
+  color: gray;
+}
+
+#credits a:visited {
+  color: gray;
+}
