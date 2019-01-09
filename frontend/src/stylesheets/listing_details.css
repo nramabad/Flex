@@ -8,6 +8,11 @@
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
 }
 
+#cloud-container div {
+  width: 500px;
+  margin: auto;
+}
+
 /* #listing-details-content div {
   display: flex;
   margin-left: auto;
@@ -16,7 +21,6 @@
 
 svg {
   display: block;
-  margin-top: 20px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;

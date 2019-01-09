@@ -23,13 +23,15 @@ class CloudDetail extends React.Component {
         const rotate = word => 0;
         const onWordMouseOver = word => word.weight;
 
-        return (<WordCloud
+        return (<div id="cloud-container">
+        <WordCloud
             data={data}
             fontSizeMapper={fontSizeMapper}
             rotate={rotate}
             width={500}
             font={"Roboto"}
-        />)
+        />
+        </div>)
     }
 
 }
