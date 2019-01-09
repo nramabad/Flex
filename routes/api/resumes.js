@@ -1,7 +1,7 @@
 // routes/api/resumes.js
 
 const express = require('express');
-const router = express.Router(); 
+const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 
@@ -39,15 +39,16 @@ router.get('/:id', (req, res) => {
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        const { errors, isValid } = validateResumeInput(req.body);
+        const { errors, isValid } = validateResumeInput(req.body.text);
+
+        console.log(req.body);
 
         if (!isValid) {
             return res.status(400).json(errors);
         }
-
         const newResume = new Resume({
             text: req.body.text,
-            user: req.user.id
+            user: req.body.user
         });
 
         newResume.save().then(resume => res.json(resume));

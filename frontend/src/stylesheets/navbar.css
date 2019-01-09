@@ -99,6 +99,7 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 5px;
+  overflow: scroll;
 }
 
 .resume-upload-modal-backdrop {
@@ -113,6 +114,7 @@
   background-color: #4B4D63;
   opacity: 0.5;
 }
+
 
 #top-bar-right:last-child {
   margin-right: 15px;

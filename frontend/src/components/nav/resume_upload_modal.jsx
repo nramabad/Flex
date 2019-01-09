@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { Link, Redirect } from 'react-router-dom';
+import NewResumeStuff from "../resume/resume_form_container"
+
 class ResumeUploadModal extends React.Component {
   constructor(props) {
     super(props)
@@ -7,7 +10,7 @@ class ResumeUploadModal extends React.Component {
   }
 
   closeModal (e) {
-    e.preventDefault();
+
     if (this.props.onClose) {
       this.props.onClose();
     }
@@ -17,15 +20,14 @@ class ResumeUploadModal extends React.Component {
     if (this.props.isOpen === false) {
       return null;
     } else {
-      return (
-        <div>
-            <div onClick={this.closeModal} className="resume-upload-modal-backdrop" />
-            <div className="resume-upload-modal">
-              <textarea />
-              <button>Upload Resume</button>
-            </div>
-        </div>
-      );
+
+      return <div>
+          <div onClick={this.closeModal} className="resume-upload-modal-backdrop" />
+          <div className="resume-upload-modal">
+          <NewResumeStuff closeModal={this.closeModal} />
+          </div>
+        </div>;
+
     }
   }
 
