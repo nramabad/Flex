@@ -6,7 +6,8 @@ import NewResume from "./resume_form";
 
 const mapStateToProps = state => {
   return {
-    user: state.session.user
+    user: state.session.user,
+    errors:state.errors.resume
   };
 };
 
@@ -14,7 +15,6 @@ const mapDispatchToProps = dispatch => {
   return {
     composeResume: data => dispatch(composeResume(data)),
     fetchUserResumes: (id) => dispatch(fetchUserResumes(id))
-
   };
 };
 

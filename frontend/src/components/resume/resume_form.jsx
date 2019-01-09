@@ -38,10 +38,9 @@ const styles = theme => ({
     [theme.breakpoints.up(800 + theme.spacing.unit * 3 * 2)]: {
       width: 817,
       marginLeft: 'auto',
-      marginRight: 'auto',
       height: `100%`,
       maxHeight: `570px`,
-      width: `95%`,
+      width: `96%`,
       maxWidth: `1080px`
     },
   },
@@ -69,7 +68,10 @@ const styles = theme => ({
 
 const eStyle = {
   color:`red`,
-  fontWeight: `bold`
+  fontWeight: `bold`,
+  listStyleType: `none`,
+  textAlign: 'center',
+  marginLeft:`-95px`
 };
 const rStyle = {
   color:`red`,
@@ -87,23 +89,23 @@ const errorlist = {
         super(props);
         this.state = {
             resume: '',
-            user:this.props.user.id
-            // resumeErrors: '',
-            // errors: {}
+            user:this.props.user.id,
+            errors: 0
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
+
         // this.clearedErrors = false;
         // this.nextPage = this.nextPage.bind(this);
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     if (nextProps.signedIn === true) {
-    //         this.props.history.push('/login');
-    //     }
-    //     // try editing the above later
-    //     this.setState({ errors: nextProps.errors })
-    // }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.errors.resume){
+
+          this.setState({ errors: nextProps.errors })
+        }
+    }
 
     update(field) {
         return e => this.setState({
@@ -131,34 +133,33 @@ const errorlist = {
             text: this.state.resume,
             user: this.state.user
         };
-        this.props.composeResume(data).then( () => this.props.fetchUserResumes(this.props.user.id));
-        this.props.closeModal();
-
+        if (data.text.length === 0) {
+          this.setState({errors: 1})
+        } else if (data.text.length < 50 || data.text.length > 38380) {
+          this.setState({errors: 2})
+        }else {
+          this.props.composeResume(data).then(() => this.props.fetchUserResumes(this.props.user.id))
+          this.props.closeModal();
+        }
     }
 
-    // renderResumeErrors() {
-    //     if (this.state.resumeErrors) {
-    //         return (
-    //             <ul >
-    //                 <li style={rStyle} key={`error-1`}>
-    //                     {this.state.resumeErrors}
-    //                 </li>
-    //             </ul>
-    //         );
-    //     }
-    // }
 
-    // renderErrors() {
-    //     return (
-    //         <ul style={errorlist} >
-    //             {Object.keys(this.state.errors).map((error, i) => (
-    //                 <li style={eStyle} key={`error-${i}`}>
-    //                     {this.state.errors[error]}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
+
+    renderErrors() {
+      let message = null
+      if (this.state.errors === 1){
+        message = "Resume field is required"
+      } else if (this.state.errors === 2) {
+        message = "Resume / CV must be between 50 and 38380 characters"
+      }
+      return(
+        <ul style={errorlist} >
+        <li style={eStyle} >
+          {message}
+        </li>
+        </ul>
+      )
+    }
 
     render(){
       const { classes } = this.props;
@@ -178,6 +179,7 @@ const errorlist = {
                                 margin="normal"
                                 variant="outlined"
                               />
+                              {this.renderErrors()}
                               <Button
                                 type="submit"
                                 value="Submit"
@@ -188,7 +190,9 @@ const errorlist = {
                               >
                                 Upload Resume
                               </Button>
+
                               </form>
+
                               </main>
 
                           </div>
