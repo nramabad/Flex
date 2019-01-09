@@ -8,11 +8,11 @@
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
 }
 
-#listing-details-content div {
+/* #listing-details-content div {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 svg {
   display: block;
