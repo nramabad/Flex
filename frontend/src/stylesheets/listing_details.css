@@ -98,8 +98,14 @@ g > text:hover {
   padding: 20px 20px 20px 20px;
   display: block;
   width: 85%;
-  /* animation: 1s ease-out 0s 1 slideInFromBottom; */
+  z-index: -1
   /* animation-delay: 1s; */
+}
+
+.slide-animation-bottom {
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+  /* opacity: 1; */
+  z-index: 0 !important;
 }
 
 
