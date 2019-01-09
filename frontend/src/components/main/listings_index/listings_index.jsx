@@ -25,7 +25,7 @@ class ListingsIndex extends React.Component {
             Displaying your {this.props.jobs.length} daily job listings
           </div>
 
-          {this.props.jobs.map(job => (
+          {this.props.jobs.map((job) => (
             <ListingsIndexItem
               key={job.jobId}
               history={this.props.history}

@@ -1,6 +1,8 @@
 import React from 'react';
 
 class ListingsIndexItem extends React.Component {
+
+
   handleClick(jobId) {
     return (e) => {
       e.preventDefault();

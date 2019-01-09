@@ -83,10 +83,20 @@ g > text:hover {
   color: gray;
 }
 
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 #listing-details-pane {
   padding: 20px 20px 20px 20px;
   display: block;
   width: 85%;
+  /* animation: 1s ease-out 0s 1 slideInFromBottom; */
 }
 
 #details-cover-image {
