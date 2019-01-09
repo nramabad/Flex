@@ -40,7 +40,7 @@
 #top-bar-left {
   display: flex;
   align-items: center;
-  animation: 1s ease-out 0s 1 slideInFromLeft;
+  /* animation: 1s ease-out 0s 1 slideInFromLeft; */
 }
 
 #top-bar-logo {
