@@ -127,7 +127,7 @@ class SignIn extends React.Component {
               <div id="session-form-logo"></div>
             </div>
           <Typography component="h1" variant="h5">
-            Sign in
+            Sign In
           </Typography>
           {this.renderErrors()}
           <form className={classes.form} onSubmit={this.handleSubmit}>
@@ -151,7 +151,7 @@ class SignIn extends React.Component {
               color="primary"
               className={classes.submit}
             >
-              Sign in
+              Sign In
             </Button>
           </form>
           <Button

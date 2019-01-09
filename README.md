@@ -23,7 +23,7 @@ This problem decomposes into several areas of activity:
    - [ ] Users will also get matches based on sentiment analysis of resume and job listings
    - [ ] Extracting text from other document formats 
    - [ ] Recruiter upload job listings and receive best fit candidates
-   - [ ] Word map to display relational information between resume and listing keywords
+   - [X] Word map to display relational information between resume and listing keywords
 
 ## Technologies & Technical Challenges
   ##### Backend: MongoDB, Express.js 
@@ -72,7 +72,7 @@ This problem decomposes into several areas of activity:
 
 ### Day 3 Fri 1/4
   - [X] Exploring the model and npm packages **Nav** 
-  - [ ] User resume frontend component **Adi** 
+  - [X] User resume frontend component **Adi** 
   - [X] Job listings frontend component **Christina** 
   - [X] Backend queries to render for frontend components **George** 
 
@@ -80,11 +80,11 @@ This problem decomposes into several areas of activity:
   - [X] Catch up on incomplete tasks from Days 1-3 **Everyone**
 
 ### Day 6 Mon 1/7
-  - [ ] Frontend components **Nav & Adi**
-  - [ ] CSS **George & Christina** 
+  - [X] Frontend components **Nav & Adi**
+  - [X] CSS **George & Christina** 
 
 ### Day 7 Tues 1/8 
-  - [ ] Add readme **Adi**
-  - [ ] Improve UX **Christina & George**
-  - [ ] Fix bugs **Everyone**
+  - [X] Add ReadMe **Adi**
+  - [X] Improve UX **Christina & George**
+  - [X] Fix bugs **Everyone**
 

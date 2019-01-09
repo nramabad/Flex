@@ -20,6 +20,7 @@
 
 .splash-page-content-item {
   margin-top: 15px;
+  display: flex;
 }
 
 #splash-title {
@@ -31,7 +32,7 @@
 }
 
 #splash-try-button {
-  margin-top: 25px;
+  margin: 25px 10px 0px 10px;
   display: flex;
   align-items: center;
   justify-content: center;

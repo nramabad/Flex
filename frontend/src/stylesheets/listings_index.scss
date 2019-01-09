@@ -17,12 +17,26 @@
   border-bottom: 1px solid lightgray;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .listings-index-item-container {
   height: 85px;
   border-bottom: 1px solid lightgray;
   display: flex;
   justify-content: space-between;
   padding-right:18px;
+  opacity: 0;
+}
+.slide-animation-left {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  opacity: 1;
 }
 
 

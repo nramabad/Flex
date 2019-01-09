@@ -1,6 +1,16 @@
 import React from 'react';
 
 class ListingsIndexItem extends React.Component {
+
+  componentDidMount() {
+    let divs = document.querySelectorAll(".listings-index-item-container");
+    for (let i = 0; i < divs.length; i++) {
+      setTimeout(() => {
+        divs[i].classList.add("slide-animation-left");
+      }, 250 * i + 400);
+    }
+  }
+
   handleClick(jobId) {
     return (e) => {
       e.preventDefault();
