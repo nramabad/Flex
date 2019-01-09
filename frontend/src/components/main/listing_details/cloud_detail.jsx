@@ -13,7 +13,7 @@ class CloudDetail extends React.Component {
     }
 
     render() {
-        const data = this.props.words.map((word, idx) => ({ text: word, value: 100 * (this.props.words.length + 5 - idx) / this.props.words.length, score: idx + 1, weight: 1}) );
+        const data = this.props.words.map((word, idx) => ({ text: word, value: 60 * (this.props.words.length + 5 - idx) / this.props.words.length, score: idx + 1, weight: 1}) );
         if (this.props.weight) {
             this.props.weight.forEach((el, i) => data[i].weight = el);
         }

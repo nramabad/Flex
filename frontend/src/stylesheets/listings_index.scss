@@ -32,9 +32,12 @@
   display: flex;
   justify-content: space-between;
   padding-right:18px;
-  // animation: 1s ease-out 0s 1 slideInFromLeft;
+  opacity: 0;
 }
-
+.slide-animation-left {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  opacity: 1;
+}
 
 .listings-index-item-container:hover {
   cursor: pointer;

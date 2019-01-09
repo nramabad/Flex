@@ -11,6 +11,8 @@
 #cloud-container div {
   width: 500px;
   margin: auto;
+  padding-top: 10%;
+  padding-bottom: 5%;
 }
 
 /* #listing-details-content div {
@@ -97,7 +99,10 @@ g > text:hover {
   display: block;
   width: 85%;
   /* animation: 1s ease-out 0s 1 slideInFromBottom; */
+  /* animation-delay: 1s; */
 }
+
+
 
 #details-cover-image {
   background: linear-gradient(to right, seagreen, purple);

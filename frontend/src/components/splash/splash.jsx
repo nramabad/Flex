@@ -24,11 +24,18 @@ class SplashPage extends React.Component {
           <div className="splash-page-content-item" id="splash-subtitle">
             Job searching made easy.
           </div>
-          <Link to="/login" style={{ textDecoration: 'none' }}>
-          <div className="splash-page-content-item" id="splash-try-button">
-            Try now
+          <div className="splash-page-content-item">
+            <Link to="/signup" style={{ textDecoration: 'none' }}>
+            <div id="splash-try-button">
+              Sign Up
+            </div>
+            </Link>
+            <Link to="/login" style={{ textDecoration: 'none' }}>
+            <div className="splash-page-content-item" id="splash-try-button">
+              Demo
+            </div>
+            </Link>
           </div>
-          </Link>
         </div>
       </div>
     );
