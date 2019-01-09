@@ -1,6 +1,5 @@
 import React from 'react';
 import NavBar from '../../nav/navbar.jsx';
-import { Link } from 'react-router-dom';
 
 class AboutPage extends React.Component {
 
@@ -95,7 +94,7 @@ class AboutPage extends React.Component {
                 </div>
               </section>
               <section id="credits-section">
-                <div id="credits">Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                  <div id="credits">Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank" rel="noopener noreferrer">CC 3.0 BY</a></div>
               </section>
               </div>
             </div>
