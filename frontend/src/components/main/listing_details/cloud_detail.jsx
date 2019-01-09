@@ -27,6 +27,7 @@ class CloudDetail extends React.Component {
             data={data}
             fontSizeMapper={fontSizeMapper}
             rotate={rotate}
+            width={500}
             font={"Roboto"}
         />)
     }

@@ -62,6 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Render our root component and pass in the store as a prop
   const root = document.getElementById("root");
+  // const svg = document.getElementById("svg");
+  // if (svg) { 
+  //   svg.removeAttribute("width");
+  //   svg.removeAttribute("height");
+  //   svg.setAttribute("viewBox", "0 0 800 600");
+  // }
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.fetchResumes = fetchResumes
