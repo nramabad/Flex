@@ -25,18 +25,7 @@ This problem decomposes into several areas of activity:
 ## Technologies & Technical Challenges
   ##### Backend: MongoDB, Express.js 
   ##### Frontend: React, Node.js
-  #### Additional packages and libraries: Material UI, String Similarity, Unified (NLP), HTML Canvas, and GitHub Jobs API.
-
-#### Scoring text data with String Similarity npm package 
-
-#### Extract keywords from text data 
-
-#### UX
-  + ##### Frontend Interface
-	List of listings ordered by comparator score
-	Word map
-
-  + ##### Backend
+Additional packages and libraries: Material UI, String Similarity, Unified (NLP), HTML Canvas, and GitHub Jobs API. String Similarity and Unified were both used for text analysis. The word clouds are generated using canvas on HTML. Jobs were pulled from the GitHub Jobs API. 
 
 
 ## Accomplished over the Weekend
