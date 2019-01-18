@@ -1,6 +1,6 @@
 # FlexJobs
 
-### FlexJobs matches candidates with job opportunities by generating keywords and comparing similarities from user-uploaded resumes and job listings. 
+### FlexJobs matches candidates with job opportunities by generating keywords and comparing similarities from user-uploaded resumes and job listings. [Demo Now!](https://flexjobs.herokuapp.com)
 
 ## Background and Overview
 
