@@ -6,6 +6,8 @@
 
 Finding jobs can be difficult. FlexJobs uses keyword matching and string similarity to create a list of best-fit job postings that matches the user’s resume. 
 
+This application was built in a single week.
+
 This problem decomposes into several areas of activity:
   * Generate keyword topics from resumes and job listings   
   * Comparing string similarity from resume and job listings 
