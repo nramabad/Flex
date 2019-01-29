@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // }
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.fetchResumes = fetchResumes
-    window.fetchUserResumes = fetchUserResumes
+    window.fetchResumes = fetchResumes;
+    window.fetchUserResumes = fetchUserResumes;
   ReactDOM.render(<Root store={store} />, root);
 });
 // If you want your app to work offline and load faster, you can change
