@@ -14,12 +14,12 @@ import HowItWorksContainer from "./how_it_works/how_it_works_container";
 const App = () => (
   <div id="app-page">
     <Switch>
-      <Route exact path="/" component={SplashPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/about" component={AboutPageContainer} />
-      <ProtectedRoute path="/how-it-works" component={HowItWorksContainer} />
+      <ProtectedRoute exact path="/how-it-works" component={HowItWorksContainer} />
       <ProtectedRoute exact path="/home/:jobId?/:analysis?" component={MainPageContainer} />
+      <Route path="/" component={SplashPage} />
     </Switch>
   </div>
 );

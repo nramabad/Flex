@@ -1,15 +1,17 @@
 # FlexJobs
 
-### FlexJobs matches candidates with job opportunities by generating keywords and sentiment analysis from user-uploaded resumes and job listings. 
+### FlexJobs matches candidates with job opportunities by generating keywords and comparing similarities from user-uploaded resumes and job listings. [Demo Now!](https://flexjobs.herokuapp.com)
 
 ## Background and Overview
 
-Finding jobs based on both matched skills and culture fit can be difficult. FlexJobs uses keyword matching and sentiment analysis to create a list of best-fit job postings that matches the user’s resume. 
+Finding jobs can be difficult. FlexJobs uses keyword matching and string similarity to create a list of best-fit job postings (pulled from the Github Jobs API) that matches the user’s resume.
 
 This problem decomposes into several areas of activity:
   * Generate keyword topics from resumes and job listings   
-  * Generate sentiments from resumes and job listings 
+  * Comparing string similarity from resume and job listings 
   * Implement a front-end interface with which users can view the results of our work 
+  
+FlexJobs was built in a single week.
 
 ## Functionality & MVP
 
@@ -20,34 +22,16 @@ This problem decomposes into several areas of activity:
 
 #### Bonus Features
 
-   - [ ] Users will also get matches based on sentiment analysis of resume and job listings
-   - [ ] Extracting text from other document formats 
-   - [ ] Recruiter upload job listings and receive best fit candidates
    - [X] Word map to display relational information between resume and listing keywords
 
 ## Technologies & Technical Challenges
   ##### Backend: MongoDB, Express.js 
   ##### Frontend: React, Node.js
-
-#### Scoring text data with Intellexer Comparator
-
-
-#### Extract keywords from text data 
-  + ##### Enable boolean query of resumes and listings
-
-
-#### UX
-  + ##### Frontend Interface
-	List of listings ordered by comparator score
-	Word map
-	Keyword match count
-	Spell checker on your resume
-
-  + ##### Backend
+Additional packages and libraries: Material UI, String Similarity, Unified (NLP), HTML Canvas, and GitHub Jobs API. String Similarity and Unified were both used for text analysis. The word clouds are generated using canvas on HTML. Jobs were pulled from the GitHub Jobs API. 
 
 
 ## Accomplished over the Weekend
- - Researched and identified our key API's that will be used for job postings, keyword matching, and sentiment analysis 
+ - Researched and identified our key API's that will be used for job postings, keyword matching, and string similarity.
  
 ## Group Members & Work Breakdown
 
