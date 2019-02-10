@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (decodedUser.exp < currentTime) {
       // Logout the user and redirect to the login page
       store.dispatch(logout());
-      window.location.href = "/login";
+      window.location.href = "/#/login";
     }
   } else {
     // If this is a first time user, start with an empty store
@@ -72,8 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;
     window.fetchResumes = fetchResumes;
     window.fetchUserResumes = fetchUserResumes;
-  ReactDOM.render(<Root store={store} />, root);
+    ReactDOM.render(<Root store={store} />, root);
 });
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA

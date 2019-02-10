@@ -99,7 +99,7 @@ class SignupForm extends React.Component {
         let page = this.state.firstPage ? (
                             <div>
                                 <br />
-                                <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Enter your resume..." />
+                                <textarea value={this.state.resume} onChange={this.update("resume")} placeholder="Paste your resume here..." />
                                 <br />
                                 <button onClick={this.nextPage}>Next Page</button>
                                 {this.renderResumeErrors()}

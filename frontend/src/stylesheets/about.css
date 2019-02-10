@@ -62,10 +62,10 @@
 
 .team-profile-box:hover {
   transform: scale(1.05);
-  cursor: pointer;
 }
 
 .profile-link-icon:hover {
+  transform: scale(1.15);
   cursor: pointer;
 }
 

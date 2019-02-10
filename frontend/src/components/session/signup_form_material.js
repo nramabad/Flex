@@ -175,9 +175,9 @@ const errorlist = {
                               <form className={classes.form} onSubmit={this.handleSubmit}>
                               <TextField
                                 value={this.state.resume} onChange={this.update("resume")}
-                                placeholder="Enter your resume..."
+                                placeholder="Paste your resume here..."
                                 id="outlined-multiline-static"
-                                label="Enter your resume..."
+                                label="Paste your resume here..."
                                 multiline
                                 rows="7"
 
