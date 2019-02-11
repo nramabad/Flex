@@ -101,6 +101,9 @@ const errorlist = {
         });
     }
 
+    parsePDF(e) {
+      // console.log("parsed");
+    }
 
     // nextPage(e) {
     //
@@ -165,7 +168,6 @@ const errorlist = {
                 variant="outlined"
               />
               {this.renderErrors()}
-              <div>
                 <Button
                   type="submit"
                   value="Submit"
@@ -174,23 +176,27 @@ const errorlist = {
                   color="primary"
                   className={classes.submit}
                   >
-                  Update Resume
+                  Update Resume Text
                 </Button>
-
-                <span>or</span>
-      
-                <Button
-                  // type="submit"
-                  // value="Submit"
-                  fullWidth
-                  variant="contained"
-                  color="secondary"
-                  className={classes.submit}
-                  >
-                  Upload Resume PDF
-                </Button>
-              </div>
             </form>
+            <div id="or-div">or</div>
+            <input
+              hidden
+              ref={"pdf-upload"}
+              type='file'
+              accept='.pdf'
+              onChange={this.props.closeModal}
+            />
+            <Button
+              fullWidth
+              variant="contained"
+              color="secondary"
+              className={classes.submit}
+              onClick={e => {this.refs['pdf-upload'].click()}}
+              >
+              Upload Resume PDF
+            </Button>
+            
 
             </main>
 

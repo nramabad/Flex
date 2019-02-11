@@ -84,7 +84,7 @@
 }
 
 .resume-upload-modal {
-  padding: 5px;
+  padding: 20px 20px 40px 20px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -124,4 +124,9 @@
 
 #top-bar-right:last-child {
   margin-right: 15px;
+}
+
+#or-div {
+  display: flex;
+  justify-content: center;
 }
