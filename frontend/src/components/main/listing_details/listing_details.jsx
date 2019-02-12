@@ -1,6 +1,5 @@
 import React from 'react';
 import CloudDetail from './cloud_detail';
-import JobsReducer from '../../../reducers/jobs_reducer';
 
 class ListingDetails extends React.Component {
 

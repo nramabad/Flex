@@ -1,21 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import LockIcon from '@material-ui/icons/LockOutlined';
-import Account from '@material-ui/icons/AccountCircleOutlined';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import TextField from '@material-ui/core/TextField';
+import PDFJS from 'pdfjs-dist';
+
+PDFJS.GlobalWorkerOptions.workerSrc = '/../../pdf.worker.js';
 
 const styles = theme => ({
   main: {
@@ -73,12 +64,13 @@ const eStyle = {
   textAlign: 'center',
   marginLeft:`-95px`
 };
-const rStyle = {
-  color:`red`,
-  listStyleType: `none`,
-  textAlign: 'center',
-  fontWeight: `bold`
-};
+// const rStyle = {
+//   color:`red`,
+//   listStyleType: `none`,
+//   textAlign: 'center',
+//   fontWeight: `bold`
+// };
+
 const errorlist = {
   width: `100%`
 };
@@ -95,7 +87,7 @@ const errorlist = {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
-
+        this.parsePDF = this.parsePDF.bind(this);
         // this.clearedErrors = false;
         // this.nextPage = this.nextPage.bind(this);
     }
@@ -113,6 +105,37 @@ const errorlist = {
         });
     }
 
+    parsePDF(e) {
+      const selectedFile = e.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        const typedArray = new Uint8Array(reader.result);
+
+        PDFJS.getDocument({data: typedArray}).then(pdf => {
+          const allPromises = []; 
+          const pageTexts = [];
+          
+          for(let i = 1; i <= pdf.numPages; i++) {
+            allPromises.push(
+              pdf.getPage(i).then(page => {
+                return page.getTextContent().then(content => {
+                  let combinedContent = content.items.map(item => item.str).join('');
+                  pageTexts.push(combinedContent);
+                });
+              })
+            );
+          }
+
+          Promise.all(allPromises).then(() => {
+            const combinedPageTexts = pageTexts.join(' ');
+            this.setState({resume: combinedPageTexts});
+          });
+        });
+      };
+      
+      reader.readAsArrayBuffer(selectedFile);
+    }
 
     // nextPage(e) {
     //
@@ -143,8 +166,6 @@ const errorlist = {
         }
     }
 
-
-
     renderErrors() {
       let message = null
       if (this.state.errors === 1){
@@ -164,41 +185,55 @@ const errorlist = {
     render(){
       const { classes } = this.props;
       return (
-                          <div>
-                              <br />
-                              <main className={classes.Resumemain}>
-                              <form className={classes.form} onSubmit={this.handleSubmit}>
-                              <TextField
-                                value={this.state.resume} onChange={this.update("resume")}
-                                placeholder="Enter your resume..."
-                                id="outlined-multiline-static"
-                                label="Enter your resume..."
-                                multiline
-                                rows="18"
-                                className={classes.textField}
-                                margin="normal"
-                                variant="outlined"
-                              />
-                              {this.renderErrors()}
-                              <Button
-                                type="submit"
-                                value="Submit"
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                                className={classes.submit}
-                              >
-                                Upload Resume
-                              </Button>
+        <div className="resume-modal-content">
+            <main className={classes.Resumemain}>
+            <form className={classes.form} onSubmit={this.handleSubmit}>
+              <div id="or-div">
+                <span>Copy and paste your resume text into the box below, or...</span>
+                <input
+                  hidden
+                  ref={"pdf-upload"}
+                  id='pdf-upload'
+                  type='file'
+                  accept='.pdf'
+                  onChange={this.parsePDF}
+                />
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  className={classes.submit}
+                  onClick={e => { this.refs['pdf-upload'].click() }}
+                >
+                  Parse Text From Resume PDF
+                </Button>
+              </div>
+              <TextField
+                value={this.state.resume} onChange={this.update("resume")}
+                placeholder="Paste your resume here..."
+                id="outlined-multiline-static"
+                label="Paste your resume here..."
+                multiline
+                rows="18"
+                className={classes.textField}
+                margin="normal"
+                variant="outlined"
+              />
+              {this.renderErrors()}
 
-                              </form>
-
-                              </main>
-
-                          </div>
-                        )
-
+              <Button
+                type="submit"
+                value="Submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+                >
+                Submit
+              </Button>
+            </form>
+            </main>
+        </div>
+      )
     }
-
   }
   export default withRouter(connect()(withStyles(styles)(NewResume)))

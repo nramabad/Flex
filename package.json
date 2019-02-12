@@ -43,8 +43,8 @@
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
     "jwt-decode": "^2.2.0",
-    "material-ui": "^0.20.2",
     "keyword-extractor": "0.0.15",
+    "material-ui": "^0.20.2",
     "mongoose": "^5.4.0",
     "nlcst-to-string": "^2.0.2",
     "passport": "^0.4.0",
@@ -64,6 +64,7 @@
     "validator": "^10.10.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "webpack-cli": "^3.2.1"
   }
 }

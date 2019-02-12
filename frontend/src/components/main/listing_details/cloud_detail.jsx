@@ -21,7 +21,7 @@ class CloudDetail extends React.Component {
         // const fontSizeMapper = word => Math.log2(word.value) * 5;
         const fontSizeMapper = word => word.value
         const rotate = word => 0;
-        const onWordMouseOver = word => word.weight;
+        // const onWordMouseOver = word => word.weight;
 
         return (<div id="cloud-container">
         <WordCloud
