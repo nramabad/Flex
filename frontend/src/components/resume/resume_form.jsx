@@ -7,7 +7,6 @@ import TextField from '@material-ui/core/TextField';
 import PDFJS from 'pdfjs-dist';
 
 PDFJS.GlobalWorkerOptions.workerSrc = '/../../pdf.worker.js';
-// PDFJS.workerSrc = '../../pdf.worker.js';
 
 const styles = theme => ({
   main: {
@@ -65,12 +64,13 @@ const eStyle = {
   textAlign: 'center',
   marginLeft:`-95px`
 };
-const rStyle = {
-  color:`red`,
-  listStyleType: `none`,
-  textAlign: 'center',
-  fontWeight: `bold`
-};
+// const rStyle = {
+//   color:`red`,
+//   listStyleType: `none`,
+//   textAlign: 'center',
+//   fontWeight: `bold`
+// };
+
 const errorlist = {
   width: `100%`
 };

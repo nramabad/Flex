@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Link, Redirect } from 'react-router-dom';
 import NewResumeStuff from "../resume/resume_form_container"
 
 class ResumeUploadModal extends React.Component {
