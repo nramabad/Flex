@@ -22,7 +22,7 @@ FlexJobs was built in a single week.
   ##### Frontend: React, Node.js
 Additional packages and libraries: Material UI, String Similarity, Unified (NLP), HTML Canvas, and GitHub Jobs API. String Similarity and Unified were both used for text analysis. The word clouds are generated using canvas on HTML. Jobs were pulled from the GitHub Jobs API. 
  
-## Group Members & Work Breakdown
+## Group Members
 **Christina Chu**,
 [George Wang](https://github.com/guanw88),
 **Adi Kantawala**,
