@@ -16,3 +16,14 @@ This problem decomposes into several areas of activity:
   * Implement a front-end interface with which users can view the results of our work 
   
 FlexJobs was built in a single week.
+
+## Technologies & Technical Challenges
+  ##### Backend: MongoDB, Express.js 
+  ##### Frontend: React, Node.js
+Additional packages and libraries: Material UI, String Similarity, Unified (NLP), HTML Canvas, and GitHub Jobs API. String Similarity and Unified were both used for text analysis. The word clouds are generated using canvas on HTML. Jobs were pulled from the GitHub Jobs API. 
+ 
+## Group Members & Work Breakdown
+**Christina Chu**,
+[George Wang](https://github.com/guanw88),
+**Adi Kantawala**,
+**Navaneet Ramabadran**
